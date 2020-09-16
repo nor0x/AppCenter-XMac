@@ -91,28 +91,25 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <InProject>false</InProject>
+      <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json">
-      <InProject>false</InProject>
+      <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\First.imageset\vector.pdf">
-      <InProject>false</InProject>
+      <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json">
-      <InProject>false</InProject>
+      <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Second.imageset\vector.pdf">
-      <InProject>false</InProject>
+      <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Contents.json">
-      <InProject>false</InProject>
+      <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="ModulePages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
@@ -160,6 +157,8 @@
     <ProjectReference Include="..\..\SDK\AppCenterAnalytics\Microsoft.AppCenter.Analytics.iOS\Microsoft.AppCenter.Analytics.iOS.csproj">
       <Project>{EF5D0090-9E12-45B5-961C-45D787BD80A5}</Project>
       <Name>Microsoft.AppCenter.Analytics.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\SDK\AppCenterAnalytics\Microsoft.AppCenter.Analytics.iOS.Bindings\Microsoft.AppCenter.Analytics.iOS.Bindings.csproj">
       <Project>{45EA6818-8759-4E48-BD7A-E240E4D4B0F7}</Project>
@@ -168,6 +167,8 @@
     <ProjectReference Include="..\..\SDK\AppCenter\Microsoft.AppCenter.iOS\Microsoft.AppCenter.iOS.csproj">
       <Project>{B87370CD-AF51-45E0-AA15-3E0ABC0C30A0}</Project>
       <Name>Microsoft.AppCenter.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\SDK\AppCenter\Microsoft.AppCenter.iOS.Bindings\Microsoft.AppCenter.iOS.Bindings.csproj">
       <Project>{5490FECC-63B2-4543-B4FE-EDD8D1BD8351}</Project>
@@ -180,10 +181,14 @@
     <ProjectReference Include="..\..\SDK\AppCenterCrashes\Microsoft.AppCenter.Crashes.iOS\Microsoft.AppCenter.Crashes.iOS.csproj">
       <Project>{4936A94C-BE22-4F73-8468-64FA4371FF80}</Project>
       <Name>Microsoft.AppCenter.Crashes.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\SDK\AppCenterDistribute\Microsoft.AppCenter.Distribute.iOS\Microsoft.AppCenter.Distribute.iOS.csproj">
       <Project>{60241627-33BB-45F9-A1B6-6F1CB2BF2C4A}</Project>
       <Name>Microsoft.AppCenter.Distribute.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\SDK\AppCenterDistribute\Microsoft.AppCenter.Distribute.iOS.Bindings\Microsoft.AppCenter.Distribute.iOS.Bindings.csproj">
       <Project>{278DFD3C-A0DD-4DD2-97C5-44EC4BEE8462}</Project>
@@ -192,6 +197,8 @@
     <ProjectReference Include="..\..\SDK\AppCenterPush\Microsoft.AppCenter.Push.iOS\Microsoft.AppCenter.Push.iOS.csproj">
       <Project>{D8F25BA5-249D-4BB0-A4B1-A3245F2437FF}</Project>
       <Name>Microsoft.AppCenter.Push.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\SDK\AppCenterPush\Microsoft.AppCenter.Push.iOS.Bindings\Microsoft.AppCenter.Push.iOS.Bindings.csproj">
       <Project>{9417E221-3287-47AC-BD56-5223057DC389}</Project>

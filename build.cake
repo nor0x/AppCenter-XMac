@@ -33,6 +33,8 @@ IList<AppCenterModule> AppCenterModules = null;
 var ExternalsDirectory = "externals";
 var AndroidExternals = $"{ExternalsDirectory}/android";
 var IosExternals = $"{ExternalsDirectory}/ios";
+var MacosExternals = $"{ExternalsDirectory}/macos";
+
 
 var SdkStorageUrl = "https://mobilecentersdkdev.blob.core.windows.net/sdk/";
 
@@ -40,6 +42,7 @@ var SdkStorageUrl = "https://mobilecentersdkdev.blob.core.windows.net/sdk/";
 VersionReader.ReadVersions();
 var AndroidUrl = $"{SdkStorageUrl}AppCenter-SDK-Android-{VersionReader.AndroidVersion}.zip";
 var IosUrl = $"{SdkStorageUrl}AppCenter-SDK-Apple-{VersionReader.IosVersion}.zip";
+var MacosUrl = $"{SdkStorageUrl}AppCenter-SDK-Apple-{VersionReader.IosVersion}.zip";
 
 // Task Target for build
 var Target = Argument("Target", Argument("t", "Default"));
@@ -134,8 +137,38 @@ Task("Externals-Ios")
     }
 }).OnError(HandleError);
 
+// Downloading macOS binaries.
+Task("Externals-Macos")
+    .Does(() =>
+{
+    CleanDirectory(MacosExternals);
+    var zipFile = System.IO.Path.Combine(MacosExternals, "macos.zip");
+
+    // Download zip file containing AppCenter frameworks
+    DownloadFile(MacosUrl, zipFile);
+    Unzip(zipFile, MacosExternals);
+    var frameworksLocation = System.IO.Path.Combine(MacosExternals, "AppCenter-SDK-Apple/macOS");
+
+    // Copy the AppCenter binaries directly from the frameworks and add the ".a" extension
+    var files = GetFiles($"{frameworksLocation}/*.framework/AppCenter*");
+    foreach (var file in files)
+    {
+        var filename = file.GetFilename();
+        MoveFile(file, $"{MacosExternals}/{filename}.a");
+    }
+
+    // MacOS does not support distribute yet
+    // Copy Distribute resource bundle and copy it to the externals directory.
+    // var distributeBundle = "AppCenterDistributeResources.bundle";
+    // if(DirectoryExists($"{frameworksLocation}/{distributeBundle}"))
+    // {
+    //     MoveDirectory($"{frameworksLocation}/{distributeBundle}", $"{IosExternals}/{distributeBundle}");
+    // }
+}).OnError(HandleError);
+
+
 // Create a common externals task depending on platform specific ones
-Task("Externals").IsDependentOn("Externals-Ios").IsDependentOn("Externals-Android");
+Task("Externals").IsDependentOn("Externals-Ios").IsDependentOn("Externals-Android").IsDependentOn("Externals-Macos");
 
 // Main Task.
 Task("Default").IsDependentOn("NuGet").IsDependentOn("RemoveTemporaries");
