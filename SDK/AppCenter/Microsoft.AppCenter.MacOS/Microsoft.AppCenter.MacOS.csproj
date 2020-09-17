@@ -69,6 +69,7 @@
       <Name>Microsoft.AppCenter.MacOS.Bindings</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\Microsoft.AppCenter.Shared.Xamarin\Microsoft.AppCenter.Shared.Xamarin.projitems" Label="Shared" Condition="Exists('..\Microsoft.AppCenter.Shared.Xamarin\Microsoft.AppCenter.Shared.Xamarin.projitems')" />
   <Import Project="..\Microsoft.AppCenter.Shared\Microsoft.AppCenter.Shared.projitems" Label="Shared" Condition="Exists('..\Microsoft.AppCenter.Shared\Microsoft.AppCenter.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project> 

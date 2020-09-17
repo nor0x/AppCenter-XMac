@@ -52,7 +52,10 @@
   <ItemGroup>
     <NativeReference Include="..\..\..\externals\macos\AppCenterCrashes.a">
       <Kind>Static</Kind>
-      <SmartLink>False</SmartLink>
+      <SmartLink>Fals</SmartLink>
+      <ForceLoad>True</ForceLoad>
+      <IsCxx>True</IsCxx>
+      <LinkerFlags>-lc++</LinkerFlags>
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />

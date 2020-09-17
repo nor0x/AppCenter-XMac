@@ -93,7 +93,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.AppCenter.Shared.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoso.UtilClassLibrary", "Apps\Contoso.UtilClassLibrary\Contoso.UtilClassLibrary.csproj", "{D0FC73E2-AE97-495B-B41B-61CD422A8AE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AppCenter.MacOS.Bindings", "SDK\AppCenter\Microsoft.AppCenter.macOS.Bindings\Microsoft.AppCenter.MacOS.Bindings.csproj", "{E97116CF-0A1F-41B0-A5A2-A5C4A3464BD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AppCenter.MacOS.Bindings", "SDK\AppCenter\Microsoft.AppCenter.MacOS.Bindings\Microsoft.AppCenter.MacOS.Bindings.csproj", "{E97116CF-0A1F-41B0-A5A2-A5C4A3464BD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.AppCenter.MacOS", "SDK\AppCenter\Microsoft.AppCenter.MacOS\Microsoft.AppCenter.MacOS.csproj", "{727A9E5A-566A-4DC5-B62B-8F7CA17661B8}"
 EndProject
