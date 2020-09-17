@@ -103,7 +103,7 @@ namespace Microsoft.AppCenter.Analytics
 
         internal static void UnsetInstance()
         {
-            iOSAnalytics.ResetSharedInstance();
+            MacOSAnalytics.ResetSharedInstance();
         }
         private static NSDictionary StringDictToNSDict(IDictionary<string, string> dict)
         {

@@ -46,6 +46,44 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+  CodeQL-Build-MacOS:
+
+    strategy:
+      fail-fast: false
+
+    # CodeQL runs on ubuntu-latest, windows-latest, and macos-latest
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      # Override language selection by uncommenting this and choosing your languages
+      with:
+        languages: csharp
+
+    # ℹ️ Command-line programs to run using the OS shell.
+    # 📚 https://git.io/JvXDl
+
+    # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
+    #    and modify them (or add more) to build your code if your project
+    #    uses a compiled language 
+    
+    - run: |
+        echo "Run Externals-MacOS"
+        ./build.sh -target="Externals-MacOS"
+
+    - run: |
+        echo "Build App Center For MacOS"
+        msbuild SDK/AppCenter/Microsoft.AppCenter.MacOS/Microsoft.AppCenter.MacOS.csproj /p:Configuration=Release /restore /t:Build
+        msbuild SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.MacOS/Microsoft.AppCenter.Analytics.MacOS.csproj /p:UseSharedCompilation=false /restore /t:Build
+        msbuild SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/Microsoft.AppCenter.Crashes.MacOS.csproj /p:UseSharedCompilation=false /restore /t:Build
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
 
   CodeQL-Build-Windows:
 

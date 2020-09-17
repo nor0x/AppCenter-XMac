@@ -30,7 +30,7 @@ namespace Microsoft.AppCenter.Crashes
             MSWrapperException wrapperException = MSWrapperExceptionManager.LoadWrapperExceptionWithUUID(msReport.IncidentIdentifier);
             if (wrapperException != null && wrapperException.ExceptionData != null)
             {
-                Exception = CrashesUtils.DeserializeException(wrapperException.ExceptionData.ToArray());
+                StackTrace = CrashesUtils.DeserializeException(wrapperException.ExceptionData.ToArray());
             }
         }
 
