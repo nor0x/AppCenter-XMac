@@ -31,7 +31,7 @@ fi
 
 # Define default arguments.
 SCRIPT="build.cake"
-CAKE_ARGUMENTS=(-Target=Externals)
+CAKE_ARGUMENTS=(-Target=Build)
 
 # Parse arguments.
 for i in "$@"; do

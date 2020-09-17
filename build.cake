@@ -150,7 +150,7 @@ Task("Externals-Macos")
     var frameworksLocation = System.IO.Path.Combine(MacosExternals, "AppCenter-SDK-Apple/macOS");
 
     // Copy the AppCenter binaries directly from the frameworks and add the ".a" extension
-    var files = GetFiles($"{frameworksLocation}/*.framework/AppCenter*");
+    var files = GetFiles($"{frameworksLocation}/*.framework/Versions/A/AppCenter*");
     foreach (var file in files)
     {
         var filename = file.GetFilename();
