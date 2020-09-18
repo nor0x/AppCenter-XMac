@@ -31,7 +31,7 @@ fi
 
 # Define default arguments.
 SCRIPT="build.cake"
-CAKE_ARGUMENTS=(-Target=NuGet)
+CAKE_ARGUMENTS=(-Target=RemoveTemporaries)
 
 # Parse arguments.
 for i in "$@"; do

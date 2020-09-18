@@ -142,11 +142,15 @@ Task("Externals-Macos")
     .Does(() =>
 {
     CleanDirectory(MacosExternals);
+    /*
     var zipFile = System.IO.Path.Combine(MacosExternals, "macos.zip");
 
     // Download zip file containing AppCenter frameworks
     DownloadFile(MacosUrl, zipFile);
     Unzip(zipFile, MacosExternals);
+    */
+    CopyDirectory($"{IosExternals}/AppCenter-SDK-Apple", $"{MacosExternals}/AppCenter-SDK-Apple");
+
     var frameworksLocation = System.IO.Path.Combine(MacosExternals, "AppCenter-SDK-Apple/macOS");
 
     // Copy the AppCenter binaries directly from the frameworks and add the ".a" extension
@@ -154,8 +158,14 @@ Task("Externals-Macos")
     foreach (var file in files)
     {
         var filename = file.GetFilename();
-        MoveFile(file, $"{MacosExternals}/{filename}.a");
+        CopyFile(file, $"{MacosExternals}/{filename}.a");
     }
+
+    //generate correct .framework directories
+    CopyDirectory($"{frameworksLocation}/AppCenter.framework/Versions/A", $"{MacosExternals}/AppCenter.framework");
+    CopyDirectory($"{frameworksLocation}/AppCenterAnalytics.framework/Versions/A", $"{MacosExternals}/AppCenterAnalytics.framework");
+    CopyDirectory($"{frameworksLocation}/AppCenterCrashes.framework/Versions/A", $"{MacosExternals}/AppCenterCrashes.framework");
+
 
     // MacOS does not support distribute yet
     // Copy Distribute resource bundle and copy it to the externals directory.
@@ -207,8 +217,8 @@ Task("NuGet")
         DeleteFiles(specCopyName);
     }
     MoveFiles("Microsoft.AppCenter*.nupkg", "output");
-//});
-}).OnError(HandleError);
+});
+//}).OnError(HandleError);
 
 Task("NuGetPackAzDO").Does(()=>
 {
