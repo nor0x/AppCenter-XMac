@@ -31,7 +31,6 @@ IList<AppCenterModule> AppCenterModules = null;
  */
 
 var ExternalsDirectory = "externals";
-var AndroidExternals = $"{ExternalsDirectory}/android";
 var IosExternals = $"{ExternalsDirectory}/ios";
 var MacosExternals = $"{ExternalsDirectory}/macos";
 
@@ -40,7 +39,6 @@ var SdkStorageUrl = "https://mobilecentersdkdev.blob.core.windows.net/sdk/";
 
 // Need to read versions before setting url values
 VersionReader.ReadVersions();
-var AndroidUrl = $"{SdkStorageUrl}AppCenter-SDK-Android-{VersionReader.AndroidVersion}.zip";
 var IosUrl = $"{SdkStorageUrl}AppCenter-SDK-Apple-{VersionReader.IosVersion}.zip";
 var MacosUrl = $"{SdkStorageUrl}AppCenter-SDK-Apple-{VersionReader.IosVersion}.zip";
 
@@ -80,33 +78,6 @@ Task("PrepareAssemblies")
         CleanDirectory(assemblyGroup.Folder);
         CopyFiles(assemblyGroup.AssemblyPaths.Where(i => FileExists(i)), assemblyGroup.Folder, false);
     }
-}).OnError(HandleError);
-
-// Downloading Android binaries.
-Task("Externals-Android")
-    .Does(() =>
-{
-    var zipFile = System.IO.Path.Combine(AndroidExternals, "android.zip");
-    CleanDirectory(AndroidExternals);
-
-    // Download zip file.
-    DownloadFile(AndroidUrl, zipFile);
-    Unzip(zipFile, AndroidExternals);
-
-    // Move binaries to externals/android so that linked files don't have versions
-    // in their paths
-    var files = GetFiles($"{AndroidExternals}/*/*");
-    CopyFiles(files, AndroidExternals);
-
-    // Edit push manifest due to Xamarin manifest merge limitations
-    var pushLib = "appcenter-push-release";
-    var pushLibFile = $"{AndroidExternals}/{pushLib}.aar";
-    var pushLibUnzippedPath = $"{AndroidExternals}/{pushLib}";
-    var manifestUpdateFile = "SDK/AppCenterPush/Microsoft.AppCenter.Push.Android.Bindings/AndroidManifest.xml";
-    Unzip(pushLibFile, pushLibUnzippedPath);
-    DeleteFile(pushLibFile);
-    CopyFiles(manifestUpdateFile, pushLibUnzippedPath);
-    Zip(pushLibUnzippedPath, pushLibFile);
 }).OnError(HandleError);
 
 // Downloading iOS binaries.
@@ -178,7 +149,7 @@ Task("Externals-Macos")
 
 
 // Create a common externals task depending on platform specific ones
-Task("Externals").IsDependentOn("Externals-Ios").IsDependentOn("Externals-Android").IsDependentOn("Externals-Macos");
+Task("Externals").IsDependentOn("Externals-Ios").IsDependentOn("Externals-Macos");
 
 // Main Task.
 Task("Default").IsDependentOn("NuGet").IsDependentOn("RemoveTemporaries");
