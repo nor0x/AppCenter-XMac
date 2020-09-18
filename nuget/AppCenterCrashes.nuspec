@@ -28,18 +28,27 @@
   <files>
 
     <!-- .NET Standard -->
+    <!--
     <file src="$netstandard_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/netstandard1.0" />
     <file src="$netstandard_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/netstandard1.0" />
-
+    -->
     <!-- Android -->
+    <!--
     <file src="$android_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/MonoAndroid403" />
     <file src="$android_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/MonoAndroid403" />
     <file src="$android_dir$/Microsoft.AppCenter.Crashes.Android.Bindings.dll" target="lib/MonoAndroid403" />
-
+    -->
     <!-- iOS -->
+    <!--
     <file src="$ios_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.Crashes.iOS.Bindings.dll" target="lib/Xamarin.iOS10" />
+    -->
+
+    <!-- macOS -->
+    <file src="$macos_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/Microsoft.AppCenter.Crashes.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
 
     <!-- UWP -->
     <file src="$uwp_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/uap10.0" />

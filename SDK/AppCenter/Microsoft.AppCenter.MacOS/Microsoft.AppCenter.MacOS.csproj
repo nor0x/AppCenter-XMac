@@ -28,7 +28,7 @@
     <UseSGen>false</UseSGen>
     <HttpClientHandler></HttpClientHandler>
     <LinkMode></LinkMode>
-    <XamMacArch></XamMacArch>
+    <XamMacArch>x86_64</XamMacArch>
     <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,6 +37,7 @@
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Microsoft.AppCenter.xml</DocumentationFile>
     <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
@@ -44,7 +45,7 @@
     <UseSGen>false</UseSGen>
     <HttpClientHandler></HttpClientHandler>
     <LinkMode></LinkMode>
-    <XamMacArch></XamMacArch>
+    <XamMacArch>x86_64</XamMacArch>
     <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>

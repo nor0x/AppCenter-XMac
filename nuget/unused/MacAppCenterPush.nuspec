@@ -36,7 +36,7 @@
     <version>$version$</version>
   </metadata>
   <files>
-
+<!--
     <!-- .NET Standard -->
     <file src="$netstandard_dir$/Microsoft.AppCenter.Push.dll" target="lib/netstandard1.0" />
     <file src="$netstandard_dir$/Microsoft.AppCenter.Push.xml" target="lib/netstandard1.0" />
@@ -51,5 +51,10 @@
     <file src="$ios_dir$/Microsoft.AppCenter.Push.xml" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.Push.iOS.Bindings.dll" target="lib/Xamarin.iOS10" />
 
+    <!-- macOS -->
+    <file src="$macos_dir$/Microsoft.AppCenter.Push.dll" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/Microsoft.AppCenter.Push.xml" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/Microsoft.AppCenter.Push.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
+-->
   </files>
 </package>

@@ -165,7 +165,7 @@ Task("IncreasePatchVersion").Does(() =>
 
 void StartNewVersion(string newVersion)
 {
-    var snapshotVersion = newVersion + "-SNAPSHOT";
+    var snapshotVersion = newVersion + "-macOS";
     var newFileVersion = newVersion + ".0";
 
     // Replace version in all but the demo application assemblies

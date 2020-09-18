@@ -35,6 +35,8 @@
       </group>
       <group targetFramework="Xamarin.iOS10">
       </group>
+      <group targetFramework="Xamarin.Mac">
+      </group>
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Configuration" targetFramework="net461" />
@@ -48,29 +50,40 @@
   <files>
 
     <!-- .NET Standard -->
+    <!--
     <file src="$netstandard_dir$/Microsoft.AppCenter.dll" target="lib/netstandard1.0" />
     <file src="$netstandard_dir$/Microsoft.AppCenter.xml" target="lib/netstandard1.0" />
-
+    -->
     <!-- Android -->
+    <!--
     <file src="$android_dir$/Microsoft.AppCenter.dll" target="lib/MonoAndroid403" />
     <file src="$android_dir$/Microsoft.AppCenter.xml" target="lib/MonoAndroid403" />
     <file src="$android_dir$/Microsoft.AppCenter.Android.Bindings.dll" target="lib/MonoAndroid403" />
-
+    -->
     <!-- iOS -->
     <file src="$ios_dir$/Microsoft.AppCenter.dll" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.xml" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.iOS.Bindings.dll" target="lib/Xamarin.iOS10" />
 
+    <!-- macOS -->
+    <file src="$macos_dir$/Microsoft.AppCenter.dll" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/Microsoft.AppCenter.xml" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/Microsoft.AppCenter.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
+
     <!-- UWP -->
+    <!--
     <file src="$uwp_dir$/Microsoft.AppCenter.dll" target="lib/uap10.0" />
     <file src="$uwp_dir$/Microsoft.AppCenter.xml" target="lib/uap10.0" />
-
+    -->
     <!-- Windows Classic Desktop (WPF and WinForms) -->
+    <!--
     <file src="$windows_desktop_dir$/Microsoft.AppCenter.dll" target="lib/net461" />
     <file src="$windows_desktop_dir$/Microsoft.AppCenter.xml" target="lib/net461" />
-
+    -->
     <!-- WindowsDesktop (WPF and WinForms) for .NET Core -->
+    <!--
     <file src="$windows_desktop_netcore_dir$/Microsoft.AppCenter.dll" target="lib/netcoreapp3.0" />
     <file src="$windows_desktop_netcore_dir$/Microsoft.AppCenter.xml" target="lib/netcoreapp3.0" />
+    -->
   </files>
 </package>

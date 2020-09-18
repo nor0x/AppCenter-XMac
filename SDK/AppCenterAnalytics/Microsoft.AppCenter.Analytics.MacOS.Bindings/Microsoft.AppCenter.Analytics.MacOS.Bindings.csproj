@@ -45,8 +45,16 @@
   <ItemGroup>
     <NativeReference Include="..\..\..\externals\macos\AppCenterAnalytics.a">
       <Kind>Static</Kind>
-      <SmartLink>Falce</SmartLink>
+      <SmartLink>False</SmartLink>
     </NativeReference>
+      <!--
+
+    <NativeReference Include="..\..\..\externals\mac-full\AppCenterAnalytics.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+        -->
+
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project>

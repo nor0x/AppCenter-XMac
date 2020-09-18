@@ -207,6 +207,7 @@ Task("NuGet")
         DeleteFiles(specCopyName);
     }
     MoveFiles("Microsoft.AppCenter*.nupkg", "output");
+//});
 }).OnError(HandleError);
 
 Task("NuGetPackAzDO").Does(()=>

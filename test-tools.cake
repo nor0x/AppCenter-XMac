@@ -210,7 +210,7 @@ Task("IncreaseAndroidVersion").Does(()=>
 
     // Manifest version name
     var versionName = XmlPeek(manifestLocation, "manifest/@android:versionName", peekSettings);
-    var suffix = "-SNAPSHOT";
+    var suffix = "-macOS";
     if (versionName.Contains(suffix))
     {
         versionName = versionName.Substring(0, versionName.IndexOf(suffix));
