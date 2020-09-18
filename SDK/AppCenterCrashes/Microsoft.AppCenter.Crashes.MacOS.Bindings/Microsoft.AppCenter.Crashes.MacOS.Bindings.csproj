@@ -51,32 +51,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-  <!--
-    <NativeReference Include="..\..\..\externals\macos\AppCenterCrashes.a">
-      <Kind>Static</Kind>
-      <SmartLink>False</SmartLink>
-      <ForceLoad>True</ForceLoad>
-      <IsCxx>True</IsCxx>
-      <LinkerFlags>-lc++</LinkerFlags>
-    </NativeReference>
--->
    <NativeReference Include="..\..\..\externals\macos\AppCenterCrashes.framework">
       <Kind>Framework</Kind>
       <Link>AppCenterCrashes.framework</Link>
     </NativeReference>
-<!--
-    <ObjcBindingNativeFramework Include="..\..\..\externals\macos\AppCenterCrashes.framework">
-      <IncludeInPackage>true</IncludeInPackage>
-    </ObjcBindingNativeFramework>
-    -->
-      <!--<Kind>Framework</Kind>
-      <Link>AppCenterCrashes.framework</Link>
-
-      <SmartLink>False</SmartLink>
-      <ForceLoad>True</ForceLoad>
-      <IsCxx>True</IsCxx>
-      <LinkerFlags>-lc++</LinkerFlags>
-      -->
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project> 

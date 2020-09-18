@@ -44,27 +44,10 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup>
-  <!--
-    <NativeReference Include="..\..\..\externals\macos\AppCenterAnalytics.a">
-      <Kind>Static</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
--->
    <NativeReference Include="..\..\..\externals\macos\AppCenterAnalytics.framework">
       <Kind>Framework</Kind>
       <Link>AppCenterAnalytics.framework</Link>
     </NativeReference>
-<!--
-    <ObjcBindingNativeFramework Include="..\..\..\externals\macos\AppCenterAnalytics.framework">
-      <IncludeInPackage>true</IncludeInPackage>
-    </ObjcBindingNativeFramework>
-
-    -->
-      <!--<Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-      <Link>AppCenterAnalytics.framework</Link>
-      -->
-
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project>
