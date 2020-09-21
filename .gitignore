@@ -275,3 +275,4 @@ archives/
 
 # Automatically generated nuspecs
 SDK/**/*.nuspec
+.idea
