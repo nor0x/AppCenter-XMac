@@ -19,15 +19,15 @@ steps:
       
       bash build.sh
 
-# - task: NuGetCommand@2
-#   displayName: NuGet push GitHub-Packages
-#   inputs:
-#     command: 'push'
-#     packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
-#     nuGetFeedType: 'external'
-#     externalFeedCredentials: 'gh-packages'
-#     publishFeedCredentials: 'gh-packages'
-#     allowPackageConflicts: true
+- task: NuGetCommand@2
+  displayName: NuGet push GitHub-Packages
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
+    nuGetFeedType: 'external'
+    externalFeedCredentials: 'gh-packages'
+    publishFeedCredentials: 'gh-packages'
+    allowPackageConflicts: false
 
 
 - task: NuGetCommand@2
@@ -37,7 +37,7 @@ steps:
     packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget.org'
-    allowPackageConflicts: true
+    allowPackageConflicts: false
 
 - task: PublishBuildArtifacts@1
   inputs:
