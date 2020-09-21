@@ -21,6 +21,7 @@ steps:
 
 - task: NuGetCommand@2
   displayName: NuGet push GitHub-Packages
+  continueOnError: true
   inputs:
     command: 'push'
     packagesToPush: '$(Build.SourcesDirectory)/output/*.nupkg'
@@ -32,6 +33,7 @@ steps:
 
 - task: NuGetCommand@2
   displayName: NuGet push Nuget.org
+  continueOnError: true
   inputs:
     command: 'push'
     packagesToPush: '$(Build.SourcesDirectory)/output/*.nupkg'
