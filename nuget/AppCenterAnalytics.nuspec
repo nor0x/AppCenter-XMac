@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Microsoft.AppCenter.Analytics</id>
+    <id>nor0x.AppCenter.Analytics</id>
     <title>App Center Analytics</title>
     <authors>Microsoft</authors>
     <owners>microsoft,appcenter</owners>
@@ -9,7 +9,7 @@
     <summary>Microsoft App Center Analytics package provides analytics capabilities for your mobile applications.</summary>
     <description>This package contains functionalities to collect session, device properties, events etc… for your application.</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>app center appcenter analytics mobilecenter</tags>
+    <tags>app center appcenter analytics mobilecenter xamarin.mac</tags>
     <language>en-US</language>
    <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
     <repository type="git" url="https://github.com/nor0x/AppCenter-XMac" />

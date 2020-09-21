@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Microsoft.AppCenter.Crashes</id>
+    <id>nor0x.AppCenter.Crashes</id>
     <title>App Center Crashes</title>
     <authors>Microsoft</authors>
     <owners>microsoft,appcenter</owners>
