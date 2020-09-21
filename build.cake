@@ -187,7 +187,7 @@ Task("NuGet")
         // Clean up
         DeleteFiles(specCopyName);
     }
-    MoveFiles("Microsoft.AppCenter*.nupkg", "output");
+    MoveFiles("nor0x.AppCenter*.nupkg", "output");
 });
 //}).OnError(HandleError);
 

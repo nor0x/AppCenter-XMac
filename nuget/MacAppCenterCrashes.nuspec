@@ -9,7 +9,7 @@
     <summary>Microsoft App Center Crashes package provides crash reporting capabilities for your mobile applications.</summary>
     <description>This package contains functionalities to collect crash reports for your application.</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>app center appcenter crashes mobilecenter</tags>
+    <tags>app center appcenter crashes mobilecenter xamarin.mac</tags>
     <language>en-US</language>
    <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
     <repository type="git" url="https://github.com/nor0x/AppCenter-XMac" />
