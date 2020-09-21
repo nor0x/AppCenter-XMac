@@ -1,3 +1,23 @@
+<img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.svg?sanitize=true" width="150px" />
+
+# AppCenter-XMac
+[![Build Status](https://nor0x.visualstudio.com/AppCenter-XMac/_apis/build/status/nor0x.AppCenter-XMac?branchName=develop)](https://nor0x.visualstudio.com/AppCenter-XMac/_build/latest?definitionId=6&branchName=develop)
+
+AppCenter-XMac are Xamarin.Mac bindings for the AppCenter SDK.
+
+| Module      | Version | Bindings       | Sample | NuGet |
+| :-------------: | :-------------: |:-------------:| :-----:| :-----:|
+| AppCenter      | [3.3.3](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/3.3.3) | ✔      |  ✔    |soon™️|
+| AppCenter.Analytics| [3.3.3](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/3.3.3)         | ✔      |  ✔| soon™️|
+| AppCenter.Analytics| [3.3.3](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/3.3.3)         | ✔      |  ✔ |soon™️|
+| AppCenter.Push| [3.3.3](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/3.3.3)         | 🚫      |  🚫 |soon™️|
+
+
+official README from [https://github.com/microsoft/appcenter-sdk-dotnet/blob/develop/README.md](https://github.com/microsoft/appcenter-sdk-dotnet/blob/develop/README.md)
+<details>
+  <summary>⬇️ README.md ⬇️</summary>
+
+
 [![GitHub Release](https://img.shields.io/github/release/microsoft/appcenter-sdk-dotnet.svg)](https://github.com/microsoft/appcenter-sdk-dotnet/releases/latest)
 [![NuGet](https://img.shields.io/nuget/v/Microsoft.AppCenter.svg)](https://www.nuget.org/packages/Microsoft.AppCenter/)
 [![license](https://img.shields.io/badge/license-MIT%20License-yellow.svg)](https://github.com/microsoft/appcenter-sdk-dotnet/blob/master/license.txt)
@@ -46,3 +66,4 @@ App Center SDK support is provided directly within the App Center portal. Any ti
 ### 3.2 Twitter
 
 We're on Twitter as [@vsappcenter](https://www.twitter.com/vsappcenter).
+</details>
