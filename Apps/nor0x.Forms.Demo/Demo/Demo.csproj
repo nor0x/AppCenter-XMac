@@ -29,13 +29,13 @@
     </ItemGroup>
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>3.4.2-SNAPSHOT</Version>
+      <Version>3.4.2-XMAC</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>3.4.2-SNAPSHOT</Version>
+      <Version>3.4.2-XMAC</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter">
-      <Version>3.4.2-SNAPSHOT</Version>
+      <Version>3.4.2-XMAC</Version>
     </PackageReference>
     </ItemGroup>
 </Project>

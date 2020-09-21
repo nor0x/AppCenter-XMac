@@ -20,4 +20,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.0.0.0")]
 [assembly: AssemblyFileVersion("3.4.2.0")]
-[assembly: AssemblyInformationalVersion("3.4.2-SNAPSHOT")]
+[assembly: AssemblyInformationalVersion("3.4.2-XMAC")]
