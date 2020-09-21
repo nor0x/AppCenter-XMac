@@ -12,6 +12,22 @@ AppCenter-XMac are Xamarin.Mac bindings for the AppCenter SDK.
 | AppCenter.Analytics| [3.3.3](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/3.3.3)         | ✔      |  ✔ |soon™️|
 | AppCenter.Push| [3.3.3](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/3.3.3)         | 🚫      |  🚫 |soon™️|
 
+## How to use:
+- register a new macOS application on AppCenter.ms
+- get an app secret
+- install the required NuGet packages to the Xamarin.Mac project. In the `AppDelegate.cs` start the AppCenter SDK with the app secret and the required services
+i.e.
+```cs
+public override void DidFinishLaunching(NSNotification notification)
+{
+    AppCenter.Start("macos={your-secret-goes-here};",typeof(Analytics), typeof(Crashes));
+    base.DidFinishLaunching(notification);
+}
+```
+Check out the [Demo App](https://github.com/nor0x/AppCenter-XMac/tree/develop/Apps/nor0x.Forms.Demo) for a Xamarin.Forms based sample.
+
+
+
 
 official README from [https://github.com/microsoft/appcenter-sdk-dotnet/blob/develop/README.md](https://github.com/microsoft/appcenter-sdk-dotnet/blob/develop/README.md)
 <details>
