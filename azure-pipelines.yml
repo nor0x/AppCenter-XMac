@@ -23,7 +23,7 @@ steps:
   displayName: NuGet push GitHub-Packages
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
+    packagesToPush: '$(Build.SourcesDirectory)/output/*.nupkg'
     nuGetFeedType: 'external'
     externalFeedCredentials: 'gh-packages'
     publishFeedCredentials: 'gh-packages'
@@ -34,7 +34,7 @@ steps:
   displayName: NuGet push Nuget.org
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
+    packagesToPush: '$(Build.SourcesDirectory)/output/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget.org'
     allowPackageConflicts: false
