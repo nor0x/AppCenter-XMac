@@ -11,9 +11,10 @@
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>app center appcenter analytics mobilecenter</tags>
     <language>en-US</language>
-    <projectUrl>https://aka.ms/telgml</projectUrl>
+   <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
+    <repository type="git" url="https://github.com/nor0x/AppCenter-XMac" />
+    <iconUrl>https://raw.githubusercontent.com/nor0x/AppCenter-XMac/master/art/Logo.png</iconUrl>
     <license type="expression">MIT</license>
-    <iconUrl>https://aka.ms/k76877</iconUrl>
     <dependencies>
       <dependency id="Microsoft.AppCenter" version="$version$" />
     </dependencies>
