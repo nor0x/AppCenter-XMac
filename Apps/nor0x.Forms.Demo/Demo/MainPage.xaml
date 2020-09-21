@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Demo.MainPage">
+    <StackLayout>
+        <Frame BackgroundColor="#cc2e61" Padding="24" CornerRadius="0">
+            <Label Text="AppCenter for Xamarin.Mac 👋" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
+        </Frame>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Analytics 📊" FontSize="Title" Padding="30,10,30,0" />
+                <Entry x:Name="EventNameEntry" Placeholder="Event Name:" Margin="30,0,30,10" />
+                <Entry x:Name="EventParamsEntry" Placeholder="Event Parameters" Margin="30,0,30,10" />
+                <Label Text="event parameters are 'key:value' pairs separated by a comma ','" FontSize="16" Padding="30,0,30,0" />
+                <Button x:Name="SendEvent" Text="Send Event" Clicked="SendEvent_Clicked" BackgroundColor="#cc2e61" Margin="30,10,30,10"/>
+                <BoxView HeightRequest="1" BackgroundColor="#cc2e61"  Margin="0,30" />
+                <Label Text="Crashes 💣" FontSize="Title" Padding="30,0,30,0" />
+                <Entry x:Name="CrashParamsEntry" Placeholder="Crash Parameters" Margin="30,0,30,10" />
+                <Label Text="crash parameters are 'key:value' pairs separated by a comma ','" FontSize="16" Padding="30,0,30,0" />
+                <Button x:Name="SendCrash" Text="Send Crash" Clicked="SendCrash_Clicked" BackgroundColor="#cc2e61" Margin="30,10,30,10"/>
+                <Button x:Name="SendTestCrash" Text="Send Test Crash" Clicked="SendTestCrash_Clicked" BackgroundColor="#cc2e61" Margin="30,10,30,10"/>
+                <Button x:Name="CrashApp" Text="Crash App" Clicked="CrashApp_Clicked" BackgroundColor="#cc2e61" Margin="30,10,30,10"/>
+            </StackLayout>
+        </ScrollView>
+       
+    </StackLayout>
+</ContentPage>

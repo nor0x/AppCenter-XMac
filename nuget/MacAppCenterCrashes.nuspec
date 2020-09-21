@@ -31,11 +31,11 @@
     <file src="$android_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/MonoAndroid403" />
     <file src="$android_dir$/Microsoft.AppCenter.Crashes.Android.Bindings.dll" target="lib/MonoAndroid403" />
     -->
-    <!-- iOS -->
+    <!-- iOS
     <file src="$ios_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/Xamarin.iOS10" />
     <file src="$ios_dir$/Microsoft.AppCenter.Crashes.iOS.Bindings.dll" target="lib/Xamarin.iOS10" />
-    
+    -->
     <!-- macOS -->
     <file src="$macos_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/Microsoft.AppCenter.Crashes.xml" target="lib/Xamarin.Mac" />
