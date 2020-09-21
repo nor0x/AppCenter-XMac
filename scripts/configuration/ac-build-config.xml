@@ -79,10 +79,11 @@
     <module dotnetModule="SDK/AppCenter/Microsoft.AppCenter" nuspec="AppCenter.nuspec"/>
     <module dotnetModule="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics" nuspec="AppCenterAnalytics.nuspec"/>
     <module dotnetModule="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes" nuspec="AppCenterCrashes.nuspec"/>
+    <!--
     <module dotnetModule="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute" nuspec="AppCenterDistribute.nuspec"/>
     <module dotnetModule="SDK/AppCenterDistribute/Microsoft.AppCenter.DistributePlay" nuspec="AppCenterDistributePlay.nuspec"/>
     <module dotnetModule="SDK/AppCenterPush/Microsoft.AppCenter.Push" nuspec="AppCenterPush.nuspec"/>
-
+    -->
     <buildGroup platformId="mac" solutionPath="AppCenter-SDK-Build-Mac.sln">
         <build configuration="Release"/>
     </buildGroup>

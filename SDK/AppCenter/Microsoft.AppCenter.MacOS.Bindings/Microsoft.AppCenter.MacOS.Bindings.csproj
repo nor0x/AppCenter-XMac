@@ -43,33 +43,11 @@
   <ItemGroup>
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
-  
   <ItemGroup>
-            <!--
-
-    <NativeReference Include="..\..\..\externals\macos\AppCenter.a">
-
-      <Kind>Static</Kind>
-      <LinkerFlags>-lsqlite3</LinkerFlags>
-      <ForceLoad>True</ForceLoad>
-    </NativeReference>
--->
    <NativeReference Include="..\..\..\externals\macos\AppCenter.framework">
       <Kind>Framework</Kind>
       <Link>AppCenter.framework</Link>
     </NativeReference>
-<!--
-    <ObjcBindingNativeFramework Include="..\..\..\externals\macos\AppCenter.framework">
-      <IncludeInPackage>true</IncludeInPackage>
-    </ObjcBindingNativeFramework>
-    -->
-      <!--<Kind>Framework</Kind>-->
-      <!--
-        <Link>AppCenter.framework</Link>
-
-      <LinkerFlags>-lsqlite3</LinkerFlags>
-      <ForceLoad>True</ForceLoad>
-      -->
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.ObjcBinding.CSharp.targets" />
 </Project>
