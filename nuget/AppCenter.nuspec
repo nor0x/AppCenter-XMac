@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Microsoft.AppCenter</id>
+    <id>nor0x.AppCenter</id>
     <title>App Center</title>
     <authors>Microsoft</authors>
     <owners>microsoft,appcenter</owners>
@@ -9,7 +9,7 @@
     <summary>Microsoft App Center. Common package for every App Center service.</summary>
     <description>This package contains the basic functionalities that all App Center services use to communicate with the backend.</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
-    <tags>app center appcenter mobilecenter xamarin.mac</tags>
+    <tags>app center appcenter mobilecenter xamarin.mac xamarin.mac</tags>
     <language>en-US</language>
     <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
     <repository type="git" url="https://github.com/nor0x/AppCenter-XMac" />
