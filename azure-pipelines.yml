@@ -18,3 +18,29 @@ steps:
       #run build script
       
       bash build.sh
+
+- task: NuGetCommand@2
+  displayName: NuGet push GitHub-Packages
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
+    nuGetFeedType: 'external'
+    externalFeedCredentials: 'gh-packages'
+    publishFeedCredentials: 'gh-packages'
+    allowPackageConflicts: false
+
+
+- task: NuGetCommand@2
+  displayName: NuGet push Nuget.org
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.SourcesDirectory)/output/**/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'nuget.org'
+    allowPackageConflicts: false
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/output'
+    ArtifactName: 'NuGet'
+    publishLocation: 'Container'
