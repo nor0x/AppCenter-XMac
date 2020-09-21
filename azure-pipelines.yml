@@ -18,3 +18,8 @@ steps:
       #run build script
       
       bash build.sh
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/output'
+    ArtifactName: 'NuGet'
+    publishLocation: 'Container'
