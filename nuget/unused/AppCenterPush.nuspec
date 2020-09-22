@@ -3,7 +3,7 @@
   <metadata>
     <id>nor0x.AppCenter.Push</id>
     <title>App Center Push</title>
-    <authors>Microsoft</authors>
+    <authors>nor0x + Microsoft</authors>
     <owners>microsoft,appcenter</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <summary>Microsoft App Center Push package provides push notification capabilities for your mobile applications.</summary>

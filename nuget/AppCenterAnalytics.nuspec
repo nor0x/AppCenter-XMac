@@ -3,7 +3,7 @@
   <metadata>
     <id>nor0x.AppCenter.Analytics</id>
     <title>App Center Analytics</title>
-    <authors>Microsoft</authors>
+    <authors>nor0x + Microsoft</authors>
     <owners>microsoft,appcenter</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <summary>Microsoft App Center Analytics package provides analytics capabilities for your mobile applications.</summary>

@@ -3,7 +3,7 @@
   <metadata>
     <id>nor0x.AppCenter</id>
     <title>App Center</title>
-    <authors>Microsoft</authors>
+    <authors>nor0x + Microsoft</authors>
     <owners>microsoft,appcenter</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <summary>Microsoft App Center. Common package for every App Center service.</summary>
