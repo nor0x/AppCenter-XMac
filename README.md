@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.svg?sanitize=true" width="150px" />
+<img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.svg?sanitize=true" width="100px" />
 
 # AppCenter-XMac
 [![Build Status](https://nor0x.visualstudio.com/AppCenter-XMac/_apis/build/status/nor0x.AppCenter-XMac?branchName=develop)](https://nor0x.visualstudio.com/AppCenter-XMac/_build/latest?definitionId=6&branchName=develop)
