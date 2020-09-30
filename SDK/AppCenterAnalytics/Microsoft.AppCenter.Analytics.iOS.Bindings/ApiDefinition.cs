@@ -5,9 +5,9 @@ using Foundation;
 
 namespace Microsoft.AppCenter.Analytics.iOS.Bindings
 {
-    // @interface MSAnalytics : MSService
+    // @interface MSACAnalytics : MSService
     [BaseType(typeof(NSObject))]
-    interface MSAnalytics
+    interface MSACAnalytics
     {
         // +(void)setEnabled:(BOOL)isEnabled;
         [Static]
@@ -39,10 +39,10 @@ namespace Microsoft.AppCenter.Analytics.iOS.Bindings
         [Export("trackEvent:withProperties:")]
         void TrackEvent([NullAllowed] string eventName, [NullAllowed] NSDictionary properties);
 
-        // +(void)setDelegate:(id<MSAnalyticsDelegate> _Nullable)delegate;
+        // +(void)setDelegate:(id<MSACAnalyticsDelegate> _Nullable)delegate;
         [Static]
         [Export("setDelegate:")]
-        void SetDelegate([NullAllowed] MSAnalyticsDelegate analyticsDelegate);
+        void SetDelegate([NullAllowed] MSACAnalyticsDelegate analyticsDelegate);
 
         // + (void)resetSharedInstance
         [Static]
@@ -70,34 +70,34 @@ namespace Microsoft.AppCenter.Analytics.iOS.Bindings
         //bool IsAutoPageTrackingEnabled();
     }
 
-    // @protocol MSAnalyticsDelegate <NSObject>
+    // @protocol MSACAnalyticsDelegate <NSObject>
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
-    interface MSAnalyticsDelegate
+    interface MSACAnalyticsDelegate
     {
-        //@optional - (void)analytics:(MSAnalytics*)analytics willSendEventLog:(MSEventLog*)eventLog;
+        //@optional - (void)analytics:(MSACAnalytics*)analytics willSendEventLog:(MSEventLog*)eventLog;
         [Export("analytics:willSendEventLog:")]
-        void WillSendEventLog(MSAnalytics analytics, MSEventLog eventLog);
+        void WillSendEventLog(MSACAnalytics analytics, MSEventLog eventLog);
 
-        //@optional - (void)analytics:(MSAnalytics*)analytics didSucceedSendingEventLog:(MSEventLog*)eventLog;
+        //@optional - (void)analytics:(MSACAnalytics*)analytics didSucceedSendingEventLog:(MSEventLog*)eventLog;
         [Export("analytics:didSucceedSendingEventLog:")]
-        void DidSucceedSendingEventLog(MSAnalytics analytics, MSEventLog eventLog);
+        void DidSucceedSendingEventLog(MSACAnalytics analytics, MSEventLog eventLog);
 
-        //@optional - (void)analytics:(MSAnalytics*)analytics didFailSendingEventLog:(MSEventLog*)eventLog withError:(NSError*)error;
+        //@optional - (void)analytics:(MSACAnalytics*)analytics didFailSendingEventLog:(MSEventLog*)eventLog withError:(NSError*)error;
         [Export("analytics:didFailSendingEventLog:withError:")]
-        void DidFailSendingEventLog(MSAnalytics analytics, MSEventLog eventLog, NSError error);
+        void DidFailSendingEventLog(MSACAnalytics analytics, MSEventLog eventLog, NSError error);
 
-        ////@optional - (void)analytics:(MSAnalytics*)analytics willSendPageLog:(MSPageLog*)pageLog;
+        ////@optional - (void)analytics:(MSACAnalytics*)analytics willSendPageLog:(MSPageLog*)pageLog;
         //[Export("analytics:willSendPageLog:")]
-        //void WillSendPageLog(MSAnalytics analytics, MSPageLog pageLog);
+        //void WillSendPageLog(MSACAnalytics analytics, MSPageLog pageLog);
 
-        ////@optional - (void)analytics:(MSAnalytics*)analytics didSucceedSendingPageLog:(MSPageLog*)pageLog;
+        ////@optional - (void)analytics:(MSACAnalytics*)analytics didSucceedSendingPageLog:(MSPageLog*)pageLog;
         //[Export("analytics:didSucceedSendingPageLog:")]
-        //void DidSucceedSendingPageLog(MSAnalytics analytics, MSPageLog pageLog);
+        //void DidSucceedSendingPageLog(MSACAnalytics analytics, MSPageLog pageLog);
 
-        ////@optional - (void)analytics:(MSAnalytics*)analytics didFailSendingPageLog:(MSPageLog*)pageLog withError:(NSError*)error;
+        ////@optional - (void)analytics:(MSACAnalytics*)analytics didFailSendingPageLog:(MSPageLog*)pageLog withError:(NSError*)error;
         //[Export("analytics:didFailSendingPageLog:withError:")]
-        //void DidFailSendingPageLog(MSAnalytics analytics, MSPageLog pageLog, NSError error);
+        //void DidFailSendingPageLog(MSACAnalytics analytics, MSPageLog pageLog, NSError error);
     }
 
     // @interface MSLogWithProperties : MSAbstractLog
