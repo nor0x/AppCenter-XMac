@@ -28,11 +28,11 @@
         <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.4.3" />
     </ItemGroup>
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.4.3-XMAC">
+    <PackageReference Include="nor0x.AppCenter.Analytics" Version="3.4.3-XMAC">
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.4.3-XMAC">
+    <PackageReference Include="nor0x.AppCenter.Crashes" Version="3.4.3-XMAC">
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter" Version="3.4.3-XMAC">
+    <PackageReference Include="nor0x.AppCenter" Version="3.4.3-XMAC">
     </PackageReference>
 </ItemGroup>
 </Project>

@@ -90,13 +90,13 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics">
+    <PackageReference Include="nor0x.AppCenter.Crashes">
       <Version>3.4.3-XMAC</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Crashes">
+    <PackageReference Include="nor0x.AppCenter">
       <Version>3.4.3-XMAC</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter">
+    <PackageReference Include="nor0x.AppCenter.Analytics">
       <Version>3.4.3-XMAC</Version>
     </PackageReference>
   </ItemGroup>
