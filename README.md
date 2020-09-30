@@ -28,7 +28,7 @@ public override void DidFinishLaunching(NSNotification notification)
 Check out the [Demo App](https://github.com/nor0x/AppCenter-XMac/tree/develop/Apps/nor0x.Forms.Demo) for a Xamarin.Forms based sample.
 
 ## ProTips
-- to inspect handled errors you just add `&errorType=all` to the URL at `appcenter` -> `diagnostics` -> `issues` ([kudos](https://github.com/microsoft/appcenter/issues/192#issuecomment-670703714))
+- to inspect handled errors you just have to add `&errorType=all` to the URL at `appcenter` -> `diagnostics` -> `issues` ([kudos](https://github.com/microsoft/appcenter/issues/192#issuecomment-670703714))
 <img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/ProTips/IMG_8102833_c.jpg" width="300px" />
 
 
