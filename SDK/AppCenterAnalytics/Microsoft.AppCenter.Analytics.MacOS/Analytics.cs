@@ -7,7 +7,7 @@ namespace Microsoft.AppCenter.Analytics
 {
     using System.Linq;
     using System.Threading.Tasks;
-    using MacOSAnalytics = MacOS.Bindings.MSAnalytics;
+    using MacOSAnalytics = MacOS.Bindings.MSACAnalytics;
 
     /// <summary>
     /// Analytics feature.
