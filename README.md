@@ -18,6 +18,7 @@ AppCenter-XMac are Xamarin.Mac bindings for the AppCenter SDK.
 - get an app secret
 - install the required NuGet packages to the Xamarin.Mac project. In the `AppDelegate.cs` start the AppCenter SDK with the app secret and the required services
 i.e.
+  - ensure your Xamarin.Mac project uses MSBuild's `PackageReference` for nuget references in its csproj file. [See this stackoverflow answer for help migrating away from the packages.config style](https://stackoverflow.com/a/49266856/7370867) 
 ```cs
 public override void DidFinishLaunching(NSNotification notification)
 {
