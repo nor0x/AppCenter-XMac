@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <sdkInfo>
-        <sdkVersion>3.4.3-XMAC</sdkVersion>
-        <iosVersion>3.3.5-1+3621e27fb248e81d7de7c749ebf53a677dfd7798</iosVersion>
-        <androidVersion>3.3.0</androidVersion>
+        <sdkVersion>4.0.0-XMAC</sdkVersion>
+        <iosVersion>4.0.0</iosVersion>
+        <androidVersion>4.0.0</androidVersion>
     </sdkInfo>
     
     <group id="ios" folder="iOSAssemblies" buildGroup="mac">
@@ -15,8 +15,6 @@
         <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.iOS/bin/Release/Microsoft.AppCenter.Crashes.iOS.Bindings.dll"/>
         <assembly path="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute.iOS/bin/Release/Microsoft.AppCenter.Distribute.dll"/>
         <assembly path="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute.iOS/bin/Release/Microsoft.AppCenter.Distribute.iOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterPush/Microsoft.AppCenter.Push.iOS/bin/Release/Microsoft.AppCenter.Push.dll"/>
-        <assembly path="SDK/AppCenterPush/Microsoft.AppCenter.Push.iOS.Bindings/bin/Release/Microsoft.AppCenter.Push.iOS.Bindings.dll"/>
     </group>
     
     <group id="macos" folder="macOSAssemblies" buildGroup="mac">
@@ -26,8 +24,6 @@
         <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.MacOS/bin/Release/Microsoft.AppCenter.Analytics.MacOS.Bindings.dll"/>
         <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/bin/Release/Microsoft.AppCenter.Crashes.dll"/>
         <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/bin/Release/Microsoft.AppCenter.Crashes.MacOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterPush/Microsoft.AppCenter.Push.MacOS/bin/Release/Microsoft.AppCenter.Push.dll"/>
-        <assembly path="SDK/AppCenterPush/Microsoft.AppCenter.Push.MacOS.Bindings/bin/Release/Microsoft.AppCenter.Push.MacOS.Bindings.dll"/>
     </group>
     
     <!--

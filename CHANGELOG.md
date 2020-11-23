@@ -1,6 +1,6 @@
 # App Center SDK for .NET Change Log
 
-## Version 3.4.3 (Under development)
+## Version 4.0.0 (Under development)
 
 ### App Center Crashes
 
