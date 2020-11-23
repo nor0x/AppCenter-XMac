@@ -4,7 +4,7 @@ using ObjCRuntime;
 namespace Microsoft.AppCenter.Crashes.MacOS.Bindings
 {
     [Native]
-    public enum MSErrorLogSetting : ulong
+    public enum MSACErrorLogSetting : ulong
     {
         Disabled = 0,
         AlwaysAsk = 1,
@@ -12,7 +12,7 @@ namespace Microsoft.AppCenter.Crashes.MacOS.Bindings
     }
 
     [Native]
-    public enum MSUserConfirmation : ulong
+    public enum MSACUserConfirmation : ulong
     {
         DontSend = 0,
         Send = 1,

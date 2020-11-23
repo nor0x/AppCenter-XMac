@@ -5,9 +5,9 @@ using ObjCRuntime;
 
 namespace Microsoft.AppCenter
 {
-    using MacOSLogLevel = Microsoft.AppCenter.MacOS.Bindings.MSLogLevel;
-    using MacOSAppCenter = Microsoft.AppCenter.MacOS.Bindings.MSAppCenter;
-    using MacOSWrapperSdk = Microsoft.AppCenter.MacOS.Bindings.MSWrapperSdk;
+    using MacOSLogLevel = Microsoft.AppCenter.MacOS.Bindings.MSACLogLevel;
+    using MacOSAppCenter = Microsoft.AppCenter.MacOS.Bindings.MSACAppCenter;
+    using MacOSWrapperSdk = Microsoft.AppCenter.MacOS.Bindings.MSACWrapperSDK;
 
     public partial class AppCenter
     {

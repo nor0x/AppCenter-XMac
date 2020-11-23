@@ -18,61 +18,61 @@ namespace Microsoft.AppCenter.Crashes
         /// The iOS SDK Crashes bindings type.
         /// </value>
         [Preserve]
-        public static Type BindingType => typeof(MSCrashes);
+        public static Type BindingType => typeof(MSACCrashes);
 
         static Task<bool> PlatformIsEnabledAsync()
         {
-            return Task.FromResult(MSCrashes.IsEnabled());
+            return Task.FromResult(MSACCrashes.IsEnabled());
         }
 
         static Task PlatformSetEnabledAsync(bool enabled)
         {
-            MSCrashes.SetEnabled(enabled);
+            MSACCrashes.SetEnabled(enabled);
             return Task.FromResult(default(object));
         }
 
         static Task<bool> PlatformHasCrashedInLastSessionAsync()
         {
-            return Task.FromResult(MSCrashes.HasCrashedInLastSession);
+            return Task.FromResult(MSACCrashes.HasCrashedInLastSession);
         }
 
         static Task<ErrorReport> PlatformGetLastSessionCrashReportAsync()
         {
             return Task.Run(() =>
             {
-                var msReport = MSCrashes.LastSessionCrashReport;
+                var msReport = MSACCrashes.LastSessionCrashReport;
                 return (msReport == null) ? null : new ErrorReport(msReport);
             });
         }
 
         static void PlatformNotifyUserConfirmation(UserConfirmation confirmation)
         {
-            MSUserConfirmation iosUserConfirmation;
+            MSACUserConfirmation iosUserConfirmation;
             switch (confirmation)
             {
                 case UserConfirmation.Send:
-                    iosUserConfirmation = MSUserConfirmation.Send;
+                    iosUserConfirmation = MSACUserConfirmation.Send;
                     break;
                 case UserConfirmation.DontSend:
-                    iosUserConfirmation = MSUserConfirmation.DontSend;
+                    iosUserConfirmation = MSACUserConfirmation.DontSend;
                     break;
                 case UserConfirmation.AlwaysSend:
-                    iosUserConfirmation = MSUserConfirmation.Always;
+                    iosUserConfirmation = MSACUserConfirmation.Always;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(confirmation), confirmation, null);
             }
-            MSCrashes.NotifyWithUserConfirmation(iosUserConfirmation);
+            MSACCrashes.NotifyWithUserConfirmation(iosUserConfirmation);
         }
 
         static void PlatformTrackError(Exception exception, IDictionary<string, string> properties)
         {
             if (properties != null)
             {
-                MSCrashes.TrackModelException(GenerateiOSException(exception, false), StringDictToNSDict(properties));
+                MSACCrashes.TrackModelException(GenerateiOSException(exception, false), StringDictToNSDict(properties));
                 return;
             }
-            MSCrashes.TrackModelException(GenerateiOSException(exception, false));
+            MSACCrashes.TrackModelException(GenerateiOSException(exception, false));
         }
 
         /// <summary>
@@ -83,10 +83,10 @@ namespace Microsoft.AppCenter.Crashes
         static Crashes()
         {
             /* Perform custom setup around the native SDK's for setting signal handlers */
-            MSCrashes.DisableMachExceptionHandler();
-            MSWrapperCrashesHelper.SetCrashHandlerSetupDelegate(new CrashesInitializationDelegate());
+            MSACCrashes.DisableMachExceptionHandler();
+            MSACWrapperCrashesHelper.SetCrashHandlerSetupDelegate(new CrashesInitializationDelegate());
             AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
-            MSCrashes.SetUserConfirmationHandler((reports) =>
+            MSACCrashes.SetUserConfirmationHandler((reports) =>
             {
                 if (ShouldAwaitUserConfirmation != null)
                 {
@@ -94,28 +94,28 @@ namespace Microsoft.AppCenter.Crashes
                 }
                 return false;
             });
-            MSCrashes.SetDelegate(_crashesDelegate);
+            MSACCrashes.SetDelegate(_crashesDelegate);
         }
 
         static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Exception systemException = e.ExceptionObject as Exception;
-            MSException exception = GenerateiOSException(systemException, true);
+            MSACException exception = GenerateiOSException(systemException, true);
             byte[] exceptionBytes = CrashesUtils.SerializeException(systemException);
             NSData wrapperExceptionData = NSData.FromArray(exceptionBytes);
 
-            MSWrapperException wrapperException = new MSWrapperException
+            MSACWrapperException wrapperException = new MSACWrapperException
             {
                 Exception = exception,
                 ExceptionData = wrapperExceptionData,
                 ProcessId = new NSNumber(Process.GetCurrentProcess().Id)
             };
-            MSWrapperExceptionManager.SaveWrapperException(wrapperException);
+            MSACWrapperExceptionManager.SaveWrapperException(wrapperException);
         }
 
-        static MSException GenerateiOSException(Exception exception, bool structuredFrames)
+        static MSACException GenerateiOSException(Exception exception, bool structuredFrames)
         {
-            var msException = new MSException();
+            var msException = new MSACException();
             msException.Type = exception.GetType().FullName;
             msException.Message = exception.Message;
             msException.StackTrace = exception.StackTrace;
@@ -123,7 +123,7 @@ namespace Microsoft.AppCenter.Crashes
             msException.WrapperSdkName = WrapperSdk.Name;
 
             var aggregateException = exception as AggregateException;
-            var innerExceptions = new List<MSException>();
+            var innerExceptions = new List<MSACException>();
 
             if (aggregateException?.InnerExceptions != null)
             {
@@ -144,16 +144,16 @@ namespace Microsoft.AppCenter.Crashes
 
 #pragma warning disable XS0001 // Find usages of mono todo items
 
-        static MSStackFrame[] GenerateStackFrames(Exception e)
+        static MSACStackFrame[] GenerateStackFrames(Exception e)
         {
             var trace = new StackTrace(e, true);
-            var frameList = new List<MSStackFrame>();
+            var frameList = new List<MSACStackFrame>();
 
             for (int i = 0; i < trace.FrameCount; ++i)
             {
                 StackFrame dotnetFrame = trace.GetFrame(i);
                 if (dotnetFrame.GetMethod() == null) continue;
-                var msFrame = new MSStackFrame();
+                var msFrame = new MSACStackFrame();
                 msFrame.Address = null;
                 msFrame.Code = null;
                 msFrame.MethodName = dotnetFrame.GetMethod().Name;
@@ -179,9 +179,9 @@ namespace Microsoft.AppCenter.Crashes
         }
 
         // Bridge between .NET events/callbacks and Apple native SDK
-        class CrashesDelegate : MSCrashesDelegate
+        class CrashesDelegate : MSACCrashesDelegate
         {
-            public override bool CrashesShouldProcessErrorReport(MSCrashes crashes, MSErrorReport msReport)
+            public override bool CrashesShouldProcessErrorReport(MSACCrashes crashes, MSACErrorReport msReport)
             {
                 if (ShouldProcessErrorReport == null)
                 {
@@ -191,7 +191,7 @@ namespace Microsoft.AppCenter.Crashes
                 return ShouldProcessErrorReport(report);
             }
 
-            public override NSArray AttachmentsWithCrashes(MSCrashes crashes, MSErrorReport msReport)
+            public override NSArray AttachmentsWithCrashes(MSACCrashes crashes, MSACErrorReport msReport)
             {
                 if (GetErrorAttachments == null)
                 {
@@ -218,7 +218,7 @@ namespace Microsoft.AppCenter.Crashes
                 return null;
             }
 
-            public override void CrashesWillSendErrorReport(MSCrashes crashes, MSErrorReport msReport)
+            public override void CrashesWillSendErrorReport(MSACCrashes crashes, MSACErrorReport msReport)
             {
                 if (SendingErrorReport != null)
                 {
@@ -231,7 +231,7 @@ namespace Microsoft.AppCenter.Crashes
                 }
             }
 
-            public override void CrashesDidSucceedSendingErrorReport(MSCrashes crashes, MSErrorReport msReport)
+            public override void CrashesDidSucceedSendingErrorReport(MSACCrashes crashes, MSACErrorReport msReport)
             {
                 if (SentErrorReport != null)
                 {
@@ -245,7 +245,7 @@ namespace Microsoft.AppCenter.Crashes
 
             }
 
-            public override void CrashesDidFailSendingErrorReport(MSCrashes crashes, MSErrorReport msReport, NSError error)
+            public override void CrashesDidFailSendingErrorReport(MSACCrashes crashes, MSACErrorReport msReport, NSError error)
             {
                 if (FailedToSendErrorReport != null)
                 {

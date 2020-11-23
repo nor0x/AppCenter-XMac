@@ -5,23 +5,23 @@ namespace Microsoft.AppCenter.Crashes
 {
     public partial class ErrorAttachmentLog
     {
-        internal MSErrorAttachmentLog internalAttachment { get; }
+        internal MSACErrorAttachmentLog internalAttachment { get; }
 
-        ErrorAttachmentLog(MSErrorAttachmentLog macAttachment)
+        ErrorAttachmentLog(MSACErrorAttachmentLog macAttachment)
         {
             internalAttachment = macAttachment;
         }
 
         static ErrorAttachmentLog PlatformAttachmentWithText(string text, string fileName)
         {
-            MSErrorAttachmentLog macAttachment = MSErrorAttachmentLog.AttachmentWithText(text, fileName);
+            MSACErrorAttachmentLog macAttachment = MSACErrorAttachmentLog.AttachmentWithText(text, fileName);
             return new ErrorAttachmentLog(macAttachment);
         }
 
         static ErrorAttachmentLog PlatformAttachmentWithBinary(byte[] data, string filename, string contentType)
         {
             NSData nsdata = NSData.FromArray(data);
-            MSErrorAttachmentLog macAttachment = MSErrorAttachmentLog.AttachmentWithBinaryData(nsdata, filename, contentType);
+            MSACErrorAttachmentLog macAttachment = MSACErrorAttachmentLog.AttachmentWithBinaryData(nsdata, filename, contentType);
             return new ErrorAttachmentLog(macAttachment);
         }
     }

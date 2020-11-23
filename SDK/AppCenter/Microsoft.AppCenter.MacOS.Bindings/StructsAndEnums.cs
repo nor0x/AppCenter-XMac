@@ -4,7 +4,7 @@ using ObjCRuntime;
 namespace Microsoft.AppCenter.MacOS.Bindings
 {
     [Native]
-    public enum MSLogLevel : ulong
+    public enum MSACLogLevel : ulong
     {
         Verbose = 2,
         Debug = 3,
