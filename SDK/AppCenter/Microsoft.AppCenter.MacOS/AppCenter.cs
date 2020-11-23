@@ -7,7 +7,7 @@ namespace Microsoft.AppCenter
 {
     using MacOSLogLevel = Microsoft.AppCenter.MacOS.Bindings.MSACLogLevel;
     using MacOSAppCenter = Microsoft.AppCenter.MacOS.Bindings.MSACAppCenter;
-    using MacOSWrapperSdk = Microsoft.AppCenter.MacOS.Bindings.MSACWrapperSDK;
+    using MacOSWrapperSdk = Microsoft.AppCenter.MacOS.Bindings.MSACWrapperSdk;
 
     public partial class AppCenter
     {
