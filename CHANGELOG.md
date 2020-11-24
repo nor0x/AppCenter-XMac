@@ -1,6 +1,6 @@
 # App Center SDK for .NET Change Log
 
-## Version 3.4.3 (Under development)
+## Version 4.0.0 (Under development)
 
 ### App Center Crashes
 
@@ -97,7 +97,7 @@ ___
 
 #### iOS
 
-* **[Improvement]** Use namespaced `NSUserDefaults` keys with the **MSAppCenter** prefix for all the keys set by the SDK. Fixed a few keys missing namespace.
+* **[Improvement]** Use namespaced `NSUserDefaults` keys with the **MSACAppCenter** prefix for all the keys set by the SDK. Fixed a few keys missing namespace.
 
 ### App Center Crashes
 
@@ -1343,7 +1343,7 @@ Since strict mode checks if you spend time reading storage on U.I. thread we had
 * Fix null argument exceptions when passing null arguments to most APIs, an error is logged instead now.
 * This release also includes changes from underlying iOS SDK:
   * https://github.com/Microsoft/mobile-center-sdk-ios/releases/tag/0.11.0
-* Xamarin SDK calls `MSCrashes.disableMachExceptionHandler()` automatically as it's not suitable in Xamarin environment.
+* Xamarin SDK calls `MSACCrashes.disableMachExceptionHandler()` automatically as it's not suitable in Xamarin environment.
 
 #### UWP
 

@@ -1,7 +1,8 @@
 namespace Microsoft.AppCenter
 {
-    using MacOSMessageProvider = Microsoft.AppCenter.MacOS.Bindings.MSLogMessageProvider;
-    using MacOSLogger = Microsoft.AppCenter.MacOS.Bindings.MSWrapperLogger;
+    using MacOSMessageProvider = Microsoft.AppCenter.MacOS.Bindings.MSACLogMessageProvider;
+    using MacOSLogger = Microsoft.AppCenter.MacOS.Bindings.MSACWrapperLogger;
+	using MacOSLogLevel = Microsoft.AppCenter.MacOS.Bindings.MSACLogLevel;
 
     public static partial class AppCenterLog
     {
@@ -18,37 +19,37 @@ namespace Microsoft.AppCenter
         public static void Verbose(string tag, string message)
         {
             MacOSMessageProvider msg_provider = () => { return message; };
-            MacOSLogger.MSWrapperLog(msg_provider, tag, Microsoft.AppCenter.MacOS.Bindings.MSLogLevel.Verbose);
+            MacOSLogger.MSACWrapperLog(msg_provider, tag, MacOSLogLevel.Verbose);
         }
 
         public static void Debug(string tag, string message)
         {
             MacOSMessageProvider msg_provider = () => { return message; };
-            MacOSLogger.MSWrapperLog(msg_provider, tag, Microsoft.AppCenter.MacOS.Bindings.MSLogLevel.Debug);
+            MacOSLogger.MSACWrapperLog(msg_provider, tag, MacOSLogLevel.Debug);
         }
 
         public static void Info(string tag, string message)
         {
             MacOSMessageProvider msg_provider = () => { return message; };
-            MacOSLogger.MSWrapperLog(msg_provider, tag, Microsoft.AppCenter.MacOS.Bindings.MSLogLevel.Info);
+            MacOSLogger.MSACWrapperLog(msg_provider, tag, MacOSLogLevel.Info);
         }
 
         public static void Warn(string tag, string message)
         {
             MacOSMessageProvider msg_provider = () => { return message; };
-            MacOSLogger.MSWrapperLog(msg_provider, tag, Microsoft.AppCenter.MacOS.Bindings.MSLogLevel.Warning);
+            MacOSLogger.MSACWrapperLog(msg_provider, tag, MacOSLogLevel.Warning);
         }
 
         public static void Error(string tag, string message)
         {
             MacOSMessageProvider msg_provider = () => { return message; };
-            MacOSLogger.MSWrapperLog(msg_provider, tag, Microsoft.AppCenter.MacOS.Bindings.MSLogLevel.Error);
+            MacOSLogger.MSACWrapperLog(msg_provider, tag, MacOSLogLevel.Error);
         }
 
         public static void Assert(string tag, string message)
         {
             MacOSMessageProvider msg_provider = () => { return message; };
-            MacOSLogger.MSWrapperLog(msg_provider, tag, Microsoft.AppCenter.MacOS.Bindings.MSLogLevel.Assert);
+            MacOSLogger.MSACWrapperLog(msg_provider, tag, MacOSLogLevel.Assert);
         }
     }
 }

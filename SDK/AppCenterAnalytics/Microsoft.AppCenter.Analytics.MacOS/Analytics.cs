@@ -105,6 +105,7 @@ namespace Microsoft.AppCenter.Analytics
         {
             MacOSAnalytics.ResetSharedInstance();
         }
+        
         private static NSDictionary StringDictToNSDict(IDictionary<string, string> dict)
         {
             return NSDictionary.FromObjectsAndKeys(dict.Values.ToArray(), dict.Keys.ToArray());

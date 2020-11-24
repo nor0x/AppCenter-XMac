@@ -6,7 +6,7 @@ namespace Microsoft.AppCenter.Crashes
 {
     public partial class ErrorReport
     {
-        internal ErrorReport(MSErrorReport msReport)
+        internal ErrorReport(MSACErrorReport msReport)
         {
             // If Id is not null we have loaded the report from the cache
             if (Id != null)
@@ -27,8 +27,8 @@ namespace Microsoft.AppCenter.Crashes
                                              msReport.ExceptionReason,
                                              (uint)msReport.AppProcessIdentifier);
 
-            MSWrapperException wrapperException = MSWrapperExceptionManager.LoadWrapperExceptionWithUUID(msReport.IncidentIdentifier);
-            if (wrapperException != null && wrapperException.ExceptionData != null)
+            MSACWrapperException wrapperException = MSACWrapperExceptionManager.LoadWrapperExceptionWithUUID(msReport.IncidentIdentifier);
+            if (wrapperException != null && wrapperException.ExceptionData != null && wrapperException.ExceptionData.Length > 0)
             {
                 StackTrace = CrashesUtils.DeserializeException(wrapperException.ExceptionData.ToArray());
             }

@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnableCodeSigning>true</EnableCodeSigning>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
@@ -28,8 +28,10 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <HttpClientHandler></HttpClientHandler>
-    <LinkMode></LinkMode>
-    <XamMacArch></XamMacArch>
+    <LinkMode>None</LinkMode>
+    <XamMacArch>x86_64</XamMacArch>
+    <AOTMode>None</AOTMode>
+    <CodeSignExtraArgs>--deep</CodeSignExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -47,8 +49,9 @@
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <LinkMode>None</LinkMode>
     <HttpClientHandler></HttpClientHandler>
-    <XamMacArch></XamMacArch>
-    <CodeSignExtraArgs>deep</CodeSignExtraArgs>
+    <XamMacArch>x86_64</XamMacArch>
+    <AOTMode>None</AOTMode>
+    <CodeSignExtraArgs>--deep</CodeSignExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -92,13 +95,13 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="nor0x.AppCenter.Crashes">
-      <Version>3.4.3-XMAC</Version>
+      <Version>4.0.0-XMAC</Version>
     </PackageReference>
     <PackageReference Include="nor0x.AppCenter">
-      <Version>3.4.3-XMAC</Version>
+      <Version>4.0.0-XMAC</Version>
     </PackageReference>
     <PackageReference Include="nor0x.AppCenter.Analytics">
-      <Version>3.4.3-XMAC</Version>
+      <Version>4.0.0-XMAC</Version>
     </PackageReference>
   </ItemGroup>
  
