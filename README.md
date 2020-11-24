@@ -31,7 +31,7 @@ Check out the [Demo App](https://github.com/nor0x/AppCenter-XMac/tree/develop/Ap
 - to inspect handled errors you just have to add `&errorType=all` to the URL at `appcenter` -> `diagnostics` -> `issues` ([kudos](https://github.com/microsoft/appcenter/issues/192#issuecomment-670703714))
 <img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/ProTips/IMG_8102833.jpg" width="300px" />
 
-- for signed builds you have to pass `deep` as an additional argument to `codesign`
+- for signed builds you have to pass `--deep` as an additional argument to `codesign`
 <img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/ProTips/IMG_36183138.jpg" width="300px" />
 
 
