@@ -28,7 +28,7 @@ steps:
     nuGetFeedType: 'external'
     externalFeedCredentials: 'gh-packages'
     publishFeedCredentials: 'gh-packages'
-    allowPackageConflicts: false
+    allowPackageConflicts: true
 
 
 - task: NuGetCommand@2
@@ -39,7 +39,7 @@ steps:
     packagesToPush: '$(Build.SourcesDirectory)/output/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget.org'
-    allowPackageConflicts: false
+    allowPackageConflicts: true
 
 - task: PublishBuildArtifacts@1
   inputs:
