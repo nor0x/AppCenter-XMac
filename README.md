@@ -34,7 +34,7 @@ Check out the [Demo App](https://github.com/nor0x/AppCenter-XMac/tree/develop/Ap
 - for signed builds you have to pass `--deep` as an additional argument to `codesign`
 <img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/ProTips/IMG_36183138.jpg" width="300px" />
 
-
+- currently `<LinkMode>None</LinkMode>` is required in the macOS.csproj file. Enabling other Linker modes is planned for a future release
 
 official README from [https://github.com/microsoft/appcenter-sdk-dotnet/blob/develop/README.md](https://github.com/microsoft/appcenter-sdk-dotnet/blob/develop/README.md)
 <details>
