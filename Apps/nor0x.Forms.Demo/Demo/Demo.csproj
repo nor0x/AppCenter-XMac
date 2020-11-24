@@ -12,33 +12,26 @@
         <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
         <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     </ItemGroup>
-      <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
         <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.0.0" />
         <PackageReference Include="Microsoft.AppCenter" Version="4.0.0" />
         <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.0.0" />
-</ItemGroup>
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    </ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
         <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.0.0" />
         <PackageReference Include="Microsoft.AppCenter" Version="4.0.0" />
         <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.0.0" />
-</ItemGroup>
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    </ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
         <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.0.0" />
         <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.0.0" />
     </ItemGroup>
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
-    <!--
-    <PackageReference Include="nor0x.AppCenter" Version="4.0.0-XMAC">
-    </PackageReference>
-    <PackageReference Include="nor0x.AppCenter.Analytics" Version="4.0.0-XMAC">
-    </PackageReference>
-    <PackageReference Include="nor0x.AppCenter.Crashes" Version="4.0.0-XMAC">
-    </PackageReference>
-
-    -->
-    <ProjectReference Include="..\..\..\SDK\AppCenterr\Microsoft.AppCenter.MacOS\Microsoft.AppCenter.MacOS.csproj" />
-    <ProjectReference Include="..\..\..\SDK\AppCenterAnalytics\Microsoft.AppCenter.Analytics.MacOS\Microsoft.AppCenter.Analytics.MacOS.csproj" />
-    <ProjectReference Include="..\..\..\SDK\AppCenterCrashes\Microsoft.AppCenter.Crashes.MacOS\Microsoft.AppCenter.Crashes.MacOS.csproj" />
-</ItemGroup>
-
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
+        <PackageReference Include="nor0x.AppCenter" Version="4.0.0-XMAC">
+        </PackageReference>
+        <PackageReference Include="nor0x.AppCenter.Analytics" Version="4.0.0-XMAC">
+        </PackageReference>
+        <PackageReference Include="nor0x.AppCenter.Crashes" Version="4.0.0-XMAC">
+        </PackageReference>
+    </ItemGroup>
 </Project>
