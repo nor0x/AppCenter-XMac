@@ -28,7 +28,7 @@ namespace Microsoft.AppCenter.Crashes
                                              (uint)msReport.AppProcessIdentifier);
 
             MSACWrapperException wrapperException = MSACWrapperExceptionManager.LoadWrapperExceptionWithUUID(msReport.IncidentIdentifier);
-            if (wrapperException != null && wrapperException.ExceptionData != null)
+            if (wrapperException != null && wrapperException.ExceptionData != null && wrapperException.ExceptionData.Length > 0)
             {
                 StackTrace = CrashesUtils.DeserializeException(wrapperException.ExceptionData.ToArray());
             }

@@ -10,7 +10,7 @@ namespace Microsoft.AppCenter
 {
     using iOSLogLevel = Microsoft.AppCenter.iOS.Bindings.MSACLogLevel;
     using iOSAppCenter = Microsoft.AppCenter.iOS.Bindings.MSACAppCenter;
-    using iOSWrapperSdk = Microsoft.AppCenter.iOS.Bindings.MSACWrapperSdk;
+    using iOSWrapperSdk = Microsoft.AppCenter.iOS.Bindings.MSACWrapperSdkNEW;
 
     public partial class AppCenter
     {

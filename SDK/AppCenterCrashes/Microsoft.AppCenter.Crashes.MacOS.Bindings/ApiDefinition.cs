@@ -82,6 +82,7 @@ namespace Microsoft.AppCenter.Crashes.MacOS.Bindings
         [Static]
         [Export("hasReceivedMemoryWarningInLastSession")]
         bool HasReceivedMemoryWarningInLastSession { get; }
+
         //(MSACErrorReport * _Nullable)lastSessionCrashReport;
         [Static]
         [NullAllowed, Export("lastSessionCrashReport")]
@@ -119,23 +120,23 @@ namespace Microsoft.AppCenter.Crashes.MacOS.Bindings
     {
         // @optional -(BOOL)crashes:(MSACCrashes *)crashes shouldProcessErrorReport:(MSACErrorReport *)errorReport;
         [Export("crashes:shouldProcessErrorReport:")]
-        bool CrashesShouldProcessErrorReport(MSACCrashes crashes, MSACErrorReport msReport);
+        bool CrashesShouldProcessErrorReport(MSACCrashes crashes, MSACErrorReport errorReport);
 
         // @optional - (NSArray<MSACErrorAttachmentLog *> *)attachmentsWithCrashes:(MSACCrashes *)crashes forErrorReport:(MSACErrorReport *)errorReport;
         [Export("attachmentsWithCrashes:forErrorReport:")]
-        NSArray AttachmentsWithCrashes(MSACCrashes crashes, MSACErrorReport msReport);
+        NSArray AttachmentsWithCrashes(MSACCrashes crashes, MSACErrorReport errorReport);
 
         // @optional -(void)crashes:(MSACCrashes *)crashes willSendErrorReport:(MSACErrorReport *)errorReport;
         [Export("crashes:willSendErrorReport:")]
-        void CrashesWillSendErrorReport(MSACCrashes crashes, MSACErrorReport msReport);
+        void CrashesWillSendErrorReport(MSACCrashes crashes, MSACErrorReport errorReport);
 
         // @optional -(void)crashes:(MSACCrashes *)crashes didSucceedSendingErrorReport:(MSACErrorReport *)errorReport;
         [Export("crashes:didSucceedSendingErrorReport:")]
-        void CrashesDidSucceedSendingErrorReport(MSACCrashes crashes, MSACErrorReport msReport);
+        void CrashesDidSucceedSendingErrorReport(MSACCrashes crashes, MSACErrorReport errorReport);
 
         // @optional -(void)crashes:(MSACCrashes *)crashes didFailSendingErrorReport:(MSACErrorReport *)errorReport withError:(NSError *)error;
         [Export("crashes:didFailSendingErrorReport:withError:")]
-        void CrashesDidFailSendingErrorReport(MSACCrashes crashes, MSACErrorReport msReport, NSError error);
+        void CrashesDidFailSendingErrorReport(MSACCrashes crashes, MSACErrorReport errorReport, NSError error);
     }
 
     // @interface MSACErrorAttachmentLog : NSObject
@@ -274,6 +275,7 @@ namespace Microsoft.AppCenter.Crashes.MacOS.Bindings
         [Static]
         [Export("setCrashHandlerSetupDelegate:")]
         void SetCrashHandlerSetupDelegate(MSACCrashHandlerSetupDelegate del);
+        
         //+(void)trackModelException:(MSACException *)exception withProperties:(NSDictionary *)properties withAttachments:(nullable NSArray<MSACErrorAttachmentLog *> *)attachments;
         [Static]
         [Export("trackModelException:withProperties:withAttachments:")]

@@ -9,6 +9,8 @@ using Microsoft.AppCenter.Crashes.MacOS.Bindings;
 
 namespace Microsoft.AppCenter.Crashes
 {
+    using MacOSCrashes = MacOS.Bindings.MSACCrashes;
+
     public partial class Crashes
     {
         /// <summary>
@@ -18,54 +20,56 @@ namespace Microsoft.AppCenter.Crashes
         /// The iOS SDK Crashes bindings type.
         /// </value>
         [Preserve]
-        public static Type BindingType => typeof(MSACCrashes);
+        public static Type BindingType => typeof(MacOSCrashes);
 
         static Task<bool> PlatformIsEnabledAsync()
         {
-            return Task.FromResult(MSACCrashes.IsEnabled());
+            return Task.FromResult(MacOSCrashes.IsEnabled());
         }
 
         static Task PlatformSetEnabledAsync(bool enabled)
         {
-            MSACCrashes.SetEnabled(enabled);
+            MacOSCrashes.SetEnabled(enabled);
             return Task.FromResult(default(object));
         }
 
         static Task<bool> PlatformHasCrashedInLastSessionAsync()
         {
-            return Task.FromResult(MSACCrashes.HasCrashedInLastSession);
+            return Task.FromResult(MacOSCrashes.HasCrashedInLastSession);
         }
 
         static Task<ErrorReport> PlatformGetLastSessionCrashReportAsync()
         {
             return Task.Run(() =>
             {
-                var msReport = MSACCrashes.LastSessionCrashReport;
+                var msReport = MacOSCrashes.LastSessionCrashReport;
                 return (msReport == null) ? null : new ErrorReport(msReport);
             });
         }
+
         static Task<bool> PlatformHasReceivedMemoryWarningInLastSessionAsync()
         {
-            return Task.FromResult(MSACCrashes.HasReceivedMemoryWarningInLastSession);
+            return Task.FromResult(MacOSCrashes.HasReceivedMemoryWarningInLastSession);
         }
+
         static void PlatformNotifyUserConfirmation(UserConfirmation confirmation)
         {
-            MSACUserConfirmation iosUserConfirmation;
+            MSACUserConfirmation macosUserConfirmation;
             switch (confirmation)
             {
                 case UserConfirmation.Send:
-                    iosUserConfirmation = MSACUserConfirmation.Send;
+                    macosUserConfirmation = MSACUserConfirmation.Send;
                     break;
                 case UserConfirmation.DontSend:
-                    iosUserConfirmation = MSACUserConfirmation.DontSend;
+                    macosUserConfirmation = MSACUserConfirmation.DontSend;
                     break;
                 case UserConfirmation.AlwaysSend:
-                    iosUserConfirmation = MSACUserConfirmation.Always;
+                    macosUserConfirmation = MSACUserConfirmation.Always;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(confirmation), confirmation, null);
             }
-            MSACCrashes.NotifyWithUserConfirmation(iosUserConfirmation);
+            MacOSCrashes.NotifyWithUserConfirmation(macosUserConfirmation);
         }
 
         static void PlatformTrackError(Exception exception, IDictionary<string, string> properties, ErrorAttachmentLog[] attachments)
@@ -88,6 +92,7 @@ namespace Microsoft.AppCenter.Crashes
             }
             MSACWrapperCrashesHelper.TrackModelException(GenerateiOSException(exception, false), propertyDictionary, attachmentArray);
         }
+
         /// <summary>
         /// We keep the reference to avoid it being freed, inlining this object will cause listeners not to be called.
         /// </summary>
@@ -101,10 +106,10 @@ namespace Microsoft.AppCenter.Crashes
         static Crashes()
         {
             /* Perform custom setup around the native SDK's for setting signal handlers */
-            MSACCrashes.DisableMachExceptionHandler();
+            MacOSCrashes.DisableMachExceptionHandler();
             MSACWrapperCrashesHelper.SetCrashHandlerSetupDelegate(_crashesInitializationDelegate);
             AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
-            MSACCrashes.SetUserConfirmationHandler((reports) =>
+            MacOSCrashes.SetUserConfirmationHandler((reports) =>
             {
                 if (ShouldAwaitUserConfirmation != null)
                 {
@@ -112,19 +117,17 @@ namespace Microsoft.AppCenter.Crashes
                 }
                 return false;
             });
-            MSACCrashes.SetDelegate(_crashesDelegate);
+            MacOSCrashes.SetDelegate(_crashesDelegate);
         }
 
         static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Exception systemException = e.ExceptionObject as Exception;
+            var systemException = e.ExceptionObject as Exception;
             AppCenterLog.Error(LogTag, "Unhandled Exception:", systemException);
-
-            MSACException exception = GenerateiOSException(systemException, true);
-            byte[] exceptionBytes = CrashesUtils.SerializeException(systemException);
-            NSData wrapperExceptionData = NSData.FromArray(exceptionBytes);
-
-            MSACWrapperException wrapperException = new MSACWrapperException
+            var exception = GenerateiOSException(systemException, true);
+            var exceptionBytes = CrashesUtils.SerializeException(systemException) ?? new byte[0];
+            var wrapperExceptionData = NSData.FromArray(exceptionBytes);
+            var wrapperException = new MSACWrapperException
             {
                 Exception = exception,
                 ExceptionData = wrapperExceptionData,
@@ -133,7 +136,6 @@ namespace Microsoft.AppCenter.Crashes
             AppCenterLog.Info(LogTag, "Saving wrapper exception...");
             MSACWrapperExceptionManager.SaveWrapperException(wrapperException);
             AppCenterLog.Info(LogTag, "Saved wrapper exception.");
-
         }
 
         static MSACException GenerateiOSException(Exception exception, bool structuredFrames)
@@ -204,7 +206,7 @@ namespace Microsoft.AppCenter.Crashes
         // Bridge between .NET events/callbacks and Apple native SDK
         class CrashesDelegate : MSACCrashesDelegate
         {
-            public override bool CrashesShouldProcessErrorReport(MSACCrashes crashes, MSACErrorReport msReport)
+            public override bool CrashesShouldProcessErrorReport(MacOSCrashes crashes, MSACErrorReport msReport)
             {
                 if (ShouldProcessErrorReport == null)
                 {
@@ -214,7 +216,7 @@ namespace Microsoft.AppCenter.Crashes
                 return ShouldProcessErrorReport(report);
             }
 
-            public override NSArray AttachmentsWithCrashes(MSACCrashes crashes, MSACErrorReport msReport)
+            public override NSArray AttachmentsWithCrashes(MacOSCrashes crashes, MSACErrorReport msReport)
             {
                 if (GetErrorAttachments == null)
                 {
@@ -241,7 +243,7 @@ namespace Microsoft.AppCenter.Crashes
                 return null;
             }
 
-            public override void CrashesWillSendErrorReport(MSACCrashes crashes, MSACErrorReport msReport)
+            public override void CrashesWillSendErrorReport(MacOSCrashes crashes, MSACErrorReport msReport)
             {
                 if (SendingErrorReport != null)
                 {
@@ -254,7 +256,7 @@ namespace Microsoft.AppCenter.Crashes
                 }
             }
 
-            public override void CrashesDidSucceedSendingErrorReport(MSACCrashes crashes, MSACErrorReport msReport)
+            public override void CrashesDidSucceedSendingErrorReport(MacOSCrashes crashes, MSACErrorReport msReport)
             {
                 if (SentErrorReport != null)
                 {
@@ -268,7 +270,7 @@ namespace Microsoft.AppCenter.Crashes
 
             }
 
-            public override void CrashesDidFailSendingErrorReport(MSACCrashes crashes, MSACErrorReport msReport, NSError error)
+            public override void CrashesDidFailSendingErrorReport(MacOSCrashes crashes, MSACErrorReport msReport, NSError error)
             {
                 if (FailedToSendErrorReport != null)
                 {
@@ -287,9 +289,10 @@ namespace Microsoft.AppCenter.Crashes
         {
             return NSDictionary.FromObjectsAndKeys(dict.Values.ToArray(), dict.Keys.ToArray());
         }
+        
         private static void PlatformUnsetInstance()
         {
-            MSACCrashes.ResetSharedInstance();
+            MacOSCrashes.ResetSharedInstance();
         }
 
         public static bool UseMonoRuntimeSignalMethods { get; set; } = true;

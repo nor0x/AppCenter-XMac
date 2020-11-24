@@ -15,9 +15,9 @@ namespace Microsoft.AppCenter.MacOS.Bindings
     //  unsafe delegate void MSACLogHandler(MSACLogMessageProvider arg0, MSACLogLevel arg1, string arg2, sbyte* arg3, sbyte* arg4, uint arg5);
     //But trying to use it as given gave an error.
 
-    // @interface MSACWrapperSdk : NSObject
+    // @interface MSACWrapperSdkNEW : NSObject
     [BaseType(typeof(NSObject))]
-    interface MSACWrapperSdk
+    interface MSACWrapperSdkNEW
     {
         // @property (readonly, nonatomic) NSString * wrapperSdkVersion;
         [Export("wrapperSdkVersion")]
@@ -43,9 +43,9 @@ namespace Microsoft.AppCenter.MacOS.Bindings
         [Export("liveUpdatePackageHash")]
         string LiveUpdatePackageHash { get; }
 
-        // -(BOOL)isEqual:(MSACWrapperSdk *)wrapperSdk;
+        // -(BOOL)isEqual:(MSACWrapperSdkNEW *)wrapperSdk;
         [Export("isEqual:")]
-        bool IsEqual(MSACWrapperSdk wrapperSdk);
+        bool IsEqual(MSACWrapperSdkNEW wrapperSdk);
 
         // initWithWrapperSdkVersion:(NSString *)wrapperSdkVersion wrapperSdkName:(NSString *)wrapperSdkName wrapperRuntimeVersion:(NSString*)wrapperRuntimeVersion liveUpdateReleaseLabel:(NSString*)liveUpdateReleaseLabel liveUpdateDeploymentKey:(NSString*)liveUpdateDeploymentKey liveUpdatePackageHash:(NSString*)liveUpdatePackageHash;
         [Export("initWithWrapperSdkVersion:wrapperSdkName:wrapperRuntimeVersion:liveUpdateReleaseLabel:liveUpdateDeploymentKey:liveUpdatePackageHash:")]
@@ -72,8 +72,8 @@ namespace Microsoft.AppCenter.MacOS.Bindings
         bool Clear();
     }
 
-    // @interface MSACDevice : MSACWrapperSdk
-    [BaseType(typeof(MSACWrapperSdk))]
+    // @interface MSACDevice : MSACWrapperSdkNEW
+    [BaseType(typeof(MSACWrapperSdkNEW))]
     interface MSACDevice
     {
         // @property (readonly, nonatomic) NSString * sdkName;
@@ -239,10 +239,10 @@ namespace Microsoft.AppCenter.MacOS.Bindings
         [Export("setLogHandler:")]
         void SetLogHandler(MSACLogHandler logHandler);
 
-        // +(void)setWrapperSdk:(MSACWrapperSdk *)wrapperSdk;
+        // +(void)setWrapperSdk:(MSACWrapperSdkNEW *)wrapperSdk;
         [Static]
         [Export("setWrapperSdk:")]
-        void SetWrapperSdk(MSACWrapperSdk wrapperSdk);
+        void SetWrapperSdk(MSACWrapperSdkNEW wrapperSdk);
 
         // +(NSUUID *)installId;
         [Static]
