@@ -9,6 +9,9 @@ namespace Microsoft.AppCenter.MacOS.Bindings
     // typedef NSString * (^MSACLogMessageProvider)();
     delegate string MSACLogMessageProvider();
 
+    // typedef (void (^)(BOOL))completionHandler();
+    delegate void MSACSetLogLevelCompletionHandlerCallback(bool result);
+
     // typedef void (^MSACLogHandler)(MSACLogMessageProvider, MSACLogLevel, const char *, const char *, uint);
     unsafe delegate void MSACLogHandler(MSACLogMessageProvider arg0, MSACLogLevel arg1, IntPtr arg2, IntPtr arg3, uint arg4);
     //Note: Objective Sharpie tried to bind the above as:
@@ -258,6 +261,11 @@ namespace Microsoft.AppCenter.MacOS.Bindings
         [Static]
         [Export("setCustomProperties:")]
         void SetCustomProperties([NullAllowed] MSACCustomProperties properties);
+
+        // +(void)setMaxStorageSize:(long)sizeInBytes completionHandler(void (^)(BOOL))completionHandler;
+        [Static]
+        [Export("setMaxStorageSize:completionHandler:")]
+        void SetMaxStorageSize(long sizeInBytes, MSACSetLogLevelCompletionHandlerCallback callback);
     }
 
     // @protocol MSACService <NSObject>
