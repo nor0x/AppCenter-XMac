@@ -184,9 +184,17 @@ namespace Microsoft.AppCenter
         {
             MacOSAppCenter.SetCustomProperties(customProperties?.IOSCustomProperties);
         }
+
         internal static void PlatformUnsetInstance()
         {
             MacOSAppCenter.ResetSharedInstance();
+        }
+
+        static Task<bool> PlatformSetMaxStorageSizeAsync(long sizeInBytes)
+        {
+            TaskCompletionSource<bool> taskCompletionSource = new TaskCompletionSource<bool>();
+            MacOSAppCenter.SetMaxStorageSize(sizeInBytes, (result) => taskCompletionSource.SetResult(result));
+            return taskCompletionSource.Task;
         }
     }
 }
