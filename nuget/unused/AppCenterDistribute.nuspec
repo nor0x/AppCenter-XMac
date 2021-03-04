@@ -15,7 +15,7 @@
     <license type="expression">MIT</license>
     <iconUrl>https://aka.ms/k76877</iconUrl>
     <dependencies>
-      <dependency id="Microsoft.AppCenter" version="$version$" />
+      <dependency id="nor0x.AppCenter" version="$version$" />
     </dependencies>
     <version>$version$</version>
   </metadata>
