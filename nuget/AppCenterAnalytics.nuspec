@@ -16,7 +16,7 @@
     <iconUrl>https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.png</iconUrl>
     <license type="expression">MIT</license>
     <dependencies>
-      <dependency id="Microsoft.AppCenter" version="$version$" />
+      <dependency id="nor0x.AppCenter" version="$version$" />
     </dependencies>
     <version>$version$</version>
   </metadata>
@@ -37,9 +37,9 @@
     <file src="$ios_dir$/Microsoft.AppCenter.Analytics.iOS.Bindings.dll" target="lib/Xamarin.iOS10" />
 
     <!-- macOS -->
-    <file src="$macos_dir$/Microsoft.AppCenter.Analytics.dll" target="lib/Xamarin.Mac" />
-    <file src="$macos_dir$/Microsoft.AppCenter.Analytics.xml" target="lib/Xamarin.Mac" />
-    <file src="$macos_dir$/Microsoft.AppCenter.Analytics.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/nor0x.AppCenter.Analytics.dll" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/nor0x.AppCenter.Analytics.xml" target="lib/Xamarin.Mac" />
+    <file src="$macos_dir$/nor0x.AppCenter.Analytics.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
 
     <!-- UWP -->
     <file src="$uwp_dir$/Microsoft.AppCenter.Analytics.dll" target="lib/uap10.0" />
