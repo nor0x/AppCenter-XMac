@@ -95,13 +95,13 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="nor0x.AppCenter.Crashes">
-      <Version>4.1.0-XMAC</Version>
+      <Version>4.1.0.1-XMAC</Version>
     </PackageReference>
     <PackageReference Include="nor0x.AppCenter">
-      <Version>4.1.0-XMAC</Version>
+      <Version>4.1.0.1-XMAC</Version>
     </PackageReference>
     <PackageReference Include="nor0x.AppCenter.Analytics">
-      <Version>4.1.0-XMAC</Version>
+      <Version>4.1.0.1-XMAC</Version>
     </PackageReference>
   </ItemGroup>
  
@@ -109,6 +109,7 @@
     <ProjectReference Include="..\Demo\Demo.csproj">
       <Project>{E4567E52-C94A-40FA-902D-EB6D8FD41F95}</Project>
       <Name>Demo</Name>
+      <Aliases>STANDARD</Aliases>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
