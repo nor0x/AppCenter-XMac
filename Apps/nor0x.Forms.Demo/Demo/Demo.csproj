@@ -13,16 +13,16 @@
         <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     </ItemGroup>
     <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
-        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.1.0" />
-        <PackageReference Include="Microsoft.AppCenter" Version="4.1.0" />
-        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.1.0" />
+        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.2.0" />
+        <PackageReference Include="Microsoft.AppCenter" Version="4.2.0" />
+        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.2.0" />
     </ItemGroup>
     <ItemGroup Condition=" $(TargetFramework.StartsWith('xamarin.mac')) ">
-        <PackageReference Include="nor0x.AppCenter" Version="4.1.0.1-XMAC">
+        <PackageReference Include="nor0x.AppCenter" Version="4.2.0-XMAC">
         </PackageReference>
-        <PackageReference Include="nor0x.AppCenter.Analytics" Version="4.1.0.1-XMAC">
+        <PackageReference Include="nor0x.AppCenter.Analytics" Version="4.2.0-XMAC">
         </PackageReference>
-        <PackageReference Include="nor0x.AppCenter.Crashes" Version="4.1.0.1-XMAC">
+        <PackageReference Include="nor0x.AppCenter.Crashes" Version="4.2.0-XMAC">
         </PackageReference>
     </ItemGroup>
 </Project>
