@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <sdkInfo>
-        <sdkVersion>4.1.0.1-XMAC</sdkVersion>
-        <iosVersion>4.1.0</iosVersion>
-        <androidVersion>4.1.0</androidVersion>
+        <sdkVersion>4.2.0-XMAC</sdkVersion>
+        <iosVersion>4.1.1</iosVersion>
+        <androidVersion>4.1.1</androidVersion>
     </sdkInfo>
     
     <group id="ios" folder="iOSAssemblies" buildGroup="mac">

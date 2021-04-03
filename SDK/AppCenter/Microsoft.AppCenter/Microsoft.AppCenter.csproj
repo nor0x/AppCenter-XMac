@@ -10,9 +10,12 @@
     <Company>Microsoft Corporation</Company>
     <Version>4.1.0-macOS</Version>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
-    <FileVersion>4.1.0.1</FileVersion>
+    <FileVersion>4.2.0</FileVersion>
     <AssemblyTitle>Microsoft.AppCenter.Core</AssemblyTitle>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Microsoft.AppCenter.xml</DocumentationFile>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>..\..\..\appcenter-public-key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
