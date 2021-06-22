@@ -75,6 +75,13 @@ namespace Microsoft.AppCenter
                 MacOSAppCenter.SetLogLevel(loglevel);
             }
         }
+
+        static bool PlatformIsNetworkRequestsAllowed
+        {
+            get => MacOSAppCenter.IsNetworkRequestsAllowed();
+            set => MacOSAppCenter.SetNetworkRequestsAllowed(value);
+        }
+
         static void PlatformSetUserId(string userId)
         {
             MacOSAppCenter.SetUserId(userId);
