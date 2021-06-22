@@ -21,7 +21,7 @@ using System.Reflection;
 
 [assembly: AssemblyVersion("0.0.0.0")]
 [assembly: AssemblyFileVersion("4.1.0.0")]
-[assembly: AssemblyInformationalVersion("4.2.0-XMAC")]
+[assembly: AssemblyInformationalVersion("4.3.0-XMAC")]
 
 // The following attributes are used to specify the signing key for the assembly, 
 // if desired. See the Mono documentation for more information about signing.
