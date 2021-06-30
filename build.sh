@@ -1,3 +1,5 @@
+printf '\e[2J\e[3J\e[H' 
+
 #!/usr/bin/env bash
 
 # Copyright (c) Microsoft Corporation. All rights reserved.

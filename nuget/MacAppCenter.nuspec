@@ -6,23 +6,20 @@
     <authors>nor0x + Microsoft</authors>
     <owners>microsoft,appcenter</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <summary>Microsoft App Center. Common package for every App Center service.</summary> 
-    <description>This package contains the basic functionalities that all App Center services use to communicate with the backend.</description> 
+    <summary>Microsoft App Center. Common package for every App Center service.</summary>
+    <description>This package contains the basic functionalities that all App Center services use to communicate with the backend.</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>app center appcenter mobilecenter xamarin.mac</tags>
     <language>en-US</language>
-   <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
+    <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
     <repository type="git" url="https://github.com/nor0x/AppCenter-XMac" />
     <iconUrl>https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.png</iconUrl>
     <license type="expression">MIT</license>
     <dependencies>
-        <!-- Use dependency groups for iOS and Android so that additional dependencies aren't added to them -->
-        <group targetFramework="MonoAndroid403">
-        </group>
-        <group targetFramework="Xamarin.iOS10">
-        </group>
-        <group targetFramework="Xamarin.Mac">
-        </group>
+      <!-- Use dependency groups for iOS and Android so that additional dependencies aren't added to them -->
+      <group targetFramework="MonoAndroid403" />
+      <group targetFramework="Xamarin.iOS10" />
+      <group targetFramework="Xamarin.Mac" />
     </dependencies>
   </metadata>
   <files>
@@ -48,5 +45,7 @@
     <file src="$macos_dir$/nor0x.AppCenter.dll" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/nor0x.AppCenter.xml" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/nor0x.AppCenter.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
+    <file src="SDK/AppCenter/Microsoft.AppCenter.MacOS/nor0x.AppCenter.targets" target="build/Xamarin.Mac/nor0x.AppCenter.targets" />
+
   </files>
 </package>
