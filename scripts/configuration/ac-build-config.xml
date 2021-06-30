@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <config>
     <sdkInfo>
-        <sdkVersion>4.2.0-XMAC</sdkVersion>
+        <sdkVersion>4.3.0-XMAC</sdkVersion>
         <iosVersion>4.1.1</iosVersion>
         <androidVersion>4.1.1</androidVersion>
     </sdkInfo>
-    
+
     <group id="ios" folder="iOSAssemblies" buildGroup="mac">
-        <assembly path="SDK/AppCenter/Microsoft.AppCenter.iOS/bin/Release/Microsoft.AppCenter.dll"/>
-        <assembly path="SDK/AppCenter/Microsoft.AppCenter.iOS/bin/Release/Microsoft.AppCenter.iOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.iOS/bin/Release/Microsoft.AppCenter.Analytics.dll"/>
-        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.iOS/bin/Release/Microsoft.AppCenter.Analytics.iOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.iOS/bin/Release/Microsoft.AppCenter.Crashes.dll"/>
-        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.iOS/bin/Release/Microsoft.AppCenter.Crashes.iOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute.iOS/bin/Release/Microsoft.AppCenter.Distribute.dll"/>
-        <assembly path="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute.iOS/bin/Release/Microsoft.AppCenter.Distribute.iOS.Bindings.dll"/>
+        <assembly path="SDK/AppCenter/Microsoft.AppCenter.iOS/bin/Release/Microsoft.AppCenter.dll" />
+        <assembly path="SDK/AppCenter/Microsoft.AppCenter.iOS/bin/Release/Microsoft.AppCenter.iOS.Bindings.dll" />
+        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.iOS/bin/Release/Microsoft.AppCenter.Analytics.dll" />
+        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.iOS/bin/Release/Microsoft.AppCenter.Analytics.iOS.Bindings.dll" />
+        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.iOS/bin/Release/Microsoft.AppCenter.Crashes.dll" />
+        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.iOS/bin/Release/Microsoft.AppCenter.Crashes.iOS.Bindings.dll" />
+        <assembly path="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute.iOS/bin/Release/Microsoft.AppCenter.Distribute.dll" />
+        <assembly path="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute.iOS/bin/Release/Microsoft.AppCenter.Distribute.iOS.Bindings.dll" />
     </group>
-    
+
     <group id="macos" folder="macOSAssemblies" buildGroup="mac">
-        <assembly path="SDK/AppCenter/Microsoft.AppCenter.MacOS/bin/Release/nor0x.AppCenter.dll"/>
-        <assembly path="SDK/AppCenter/Microsoft.AppCenter.MacOS/bin/Release/nor0x.AppCenter.MacOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.MacOS/bin/Release/nor0x.AppCenter.Analytics.dll"/>
-        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.MacOS/bin/Release/nor0x.AppCenter.Analytics.MacOS.Bindings.dll"/>
-        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/bin/Release/nor0x.AppCenter.Crashes.dll"/>
-        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/bin/Release/nor0x.AppCenter.Crashes.MacOS.Bindings.dll"/>
+        <assembly path="SDK/AppCenter/Microsoft.AppCenter.MacOS/bin/Release/nor0x.AppCenter.dll" />
+        <assembly path="SDK/AppCenter/Microsoft.AppCenter.MacOS/bin/Release/nor0x.AppCenter.MacOS.Bindings.dll" />
+        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.MacOS/bin/Release/nor0x.AppCenter.Analytics.dll" />
+        <assembly path="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics.MacOS/bin/Release/nor0x.AppCenter.Analytics.MacOS.Bindings.dll" />
+        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/bin/Release/nor0x.AppCenter.Crashes.dll" />
+        <assembly path="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/bin/Release/nor0x.AppCenter.Crashes.MacOS.Bindings.dll" />
     </group>
-    
+
     <!--
     <group id="android" folder="AndroidAssemblies" buildGroup="mac">
         <assembly path="SDK/AppCenter/Microsoft.AppCenter.Android/bin/Release/Microsoft.AppCenter.dll"/>
@@ -72,18 +72,18 @@
         <assembly path="SDK/AppCenterPush/Microsoft.AppCenter.Push.UWP/bin/Release/net461/Microsoft.AppCenter.Push.dll"/>
     </group>
     -->
-    <module dotnetModule="SDK/AppCenter/Microsoft.AppCenter" nuspec="AppCenter.nuspec"/>
-    <module dotnetModule="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics" nuspec="AppCenterAnalytics.nuspec"/>
-    <module dotnetModule="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes" nuspec="AppCenterCrashes.nuspec"/>
+    <module dotnetModule="SDK/AppCenter/Microsoft.AppCenter" nuspec="AppCenter.nuspec" />
+    <module dotnetModule="SDK/AppCenterAnalytics/Microsoft.AppCenter.Analytics" nuspec="AppCenterAnalytics.nuspec" />
+    <module dotnetModule="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes" nuspec="AppCenterCrashes.nuspec" />
     <!--
     <module dotnetModule="SDK/AppCenterDistribute/Microsoft.AppCenter.Distribute" nuspec="AppCenterDistribute.nuspec"/>
     <module dotnetModule="SDK/AppCenterDistribute/Microsoft.AppCenter.DistributePlay" nuspec="AppCenterDistributePlay.nuspec"/>
     <module dotnetModule="SDK/AppCenterPush/Microsoft.AppCenter.Push" nuspec="AppCenterPush.nuspec"/>
     -->
     <buildGroup platformId="mac" solutionPath="AppCenter-SDK-Build-Mac.sln">
-        <build configuration="Release"/>
+        <build configuration="Release" />
     </buildGroup>
     <buildGroup platformId="windows" solutionPath="AppCenter-SDK-Build-Windows.sln">
-        <build configuration="Release" toolVersion="VS2019"/>
+        <build configuration="Release" toolVersion="VS2019" />
     </buildGroup>
 </config>
