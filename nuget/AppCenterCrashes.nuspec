@@ -11,7 +11,7 @@
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>app center appcenter crashes mobilecenter xamarin.mac</tags>
     <language>en-US</language>
-   <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
+    <projectUrl>https://github.com/nor0x/AppCenter-XMac</projectUrl>
     <repository type="git" url="https://github.com/nor0x/AppCenter-XMac" />
     <iconUrl>https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.png</iconUrl>
     <license type="expression">MIT</license>
@@ -50,6 +50,7 @@
     <file src="$macos_dir$/nor0x.AppCenter.Crashes.dll" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/nor0x.AppCenter.Crashes.xml" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/nor0x.AppCenter.Crashes.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
+    <file src="SDK/AppCenterCrashes/Microsoft.AppCenter.Crashes.MacOS/nor0x.AppCenter.Crashes.targets" target="build/Xamarin.Mac/nor0x.AppCenter.Crashes.targets" />
 
     <!-- UWP -->
     <file src="$uwp_dir$/Microsoft.AppCenter.Crashes.dll" target="lib/uap10.0" />

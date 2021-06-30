@@ -17,19 +17,19 @@
     <license type="expression">MIT</license>
     <dependencies>
       <group targetFramework="uap10.0">
-        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.8"/>
-        <dependency id="Newtonsoft.Json" version="12.0.2"/>
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.8" />
+        <dependency id="Newtonsoft.Json" version="12.0.2" />
         <dependency id="SQLitePCLRaw.bundle_green" version="2.0.2" />
       </group>
       <group targetFramework="net461">
-        <dependency id="Newtonsoft.Json" version="12.0.2"/>
+        <dependency id="Newtonsoft.Json" version="12.0.2" />
         <dependency id="SQLitePCLRaw.bundle_green" version="2.0.2" />
       </group>
       <group targetFramework="netcoreapp3.0">
-        <dependency id="Newtonsoft.Json" version="12.0.2"/>
+        <dependency id="Newtonsoft.Json" version="12.0.2" />
         <dependency id="SQLitePCLRaw.bundle_green" version="2.0.2" />
-        <dependency id="System.Management" version="4.6.0"/>
-        <dependency id="System.Configuration.ConfigurationManager" version="4.6.0"/>
+        <dependency id="System.Management" version="4.6.0" />
+        <dependency id="System.Configuration.ConfigurationManager" version="4.6.0" />
       </group>
       <!-- Use empty dependency groups for iOS and Android so that additional dependencies aren't added to them -->
       <!--
@@ -38,8 +38,7 @@
       <group targetFramework="Xamarin.iOS10">
       </group>
       -->
-      <group targetFramework="Xamarin.Mac">
-      </group>
+      <group targetFramework="Xamarin.Mac" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Configuration" targetFramework="net461" />
@@ -72,6 +71,7 @@
     <file src="$macos_dir$/nor0x.AppCenter.dll" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/nor0x.AppCenter.xml" target="lib/Xamarin.Mac" />
     <file src="$macos_dir$/nor0x.AppCenter.MacOS.Bindings.dll" target="lib/Xamarin.Mac" />
+    <file src="SDK/AppCenter/Microsoft.AppCenter.MacOS/nor0x.AppCenter.targets" target="build/Xamarin.Mac/nor0x.AppCenter.targets" />
 
     <!-- UWP -->
     <!--

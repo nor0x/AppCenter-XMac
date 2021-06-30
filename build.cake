@@ -133,9 +133,32 @@ Task("Externals-Macos")
     }
 
     //generate correct .framework directories
-    CopyDirectory($"{frameworksLocation}/AppCenter.framework/Versions/A", $"{MacosExternals}/AppCenter.framework");
-    CopyDirectory($"{frameworksLocation}/AppCenterAnalytics.framework/Versions/A", $"{MacosExternals}/AppCenterAnalytics.framework");
-    CopyDirectory($"{frameworksLocation}/AppCenterCrashes.framework/Versions/A", $"{MacosExternals}/AppCenterCrashes.framework");
+
+    CopyDirectory($"{frameworksLocation}/AppCenter.framework", $"{MacosExternals}/AppCenter.framework");
+    CopyDirectory($"{frameworksLocation}/AppCenterAnalytics.framework", $"{MacosExternals}/AppCenterAnalytics.framework");
+    CopyDirectory($"{frameworksLocation}/AppCenterCrashes.framework", $"{MacosExternals}/AppCenterCrashes.framework");
+    
+    //cleanup before genereating symlinks
+    DeleteFiles($"{MacosExternals}/AppCenter.framework/AppCenter");
+    DeleteFiles($"{MacosExternals}/AppCenter.framework/Headers");
+    DeleteFiles($"{MacosExternals}/AppCenter.framework/Modules");
+    DeleteFiles($"{MacosExternals}/AppCenter.framework/PrivateHeaders");
+    DeleteFiles($"{MacosExternals}/AppCenter.framework/Resources");
+    DeleteFiles($"{MacosExternals}/AppCenter.framework/Versions/Current");
+
+    DeleteFiles($"{MacosExternals}/AppCenterAnalytics.framework/AppCenterAnalytics");
+    DeleteFiles($"{MacosExternals}/AppCenterAnalytics.framework/Headers");
+    DeleteFiles($"{MacosExternals}/AppCenterAnalytics.framework/Modules");
+    DeleteFiles($"{MacosExternals}/AppCenterAnalytics.framework/Resources");
+    DeleteFiles($"{MacosExternals}/AppCenterAnalytics.framework/Versions/Current");
+
+    DeleteFiles($"{MacosExternals}/AppCenterCrashes.framework/AppCenterCrashes");
+    DeleteFiles($"{MacosExternals}/AppCenterCrashes.framework/Headers");
+    DeleteFiles($"{MacosExternals}/AppCenterCrashes.framework/Modules");
+    DeleteFiles($"{MacosExternals}/AppCenterCrashes.framework/Resources");
+    DeleteFiles($"{MacosExternals}/AppCenterCrashes.framework/Versions/Current");
+
+    StartProcess("sh", new ProcessSettings{Arguments = $"frameworksymlinks.sh"});
 
 
     // MacOS does not support distribute yet
