@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project
+  DefaultTargets="Build"
+  ToolsVersion="4.0"
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -92,16 +95,20 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference
+      Include="Xamarin.Essentials"
+      Version="1.6.0-pre1" />
+    <PackageReference
+      Include="Xamarin.Forms"
+      Version="4.8.0.1451" />
     <PackageReference Include="nor0x.AppCenter">
-      <Version>4.3.1-XMAC</Version>
+      <Version>4.4.0-XMAC</Version>
     </PackageReference>
     <PackageReference Include="nor0x.AppCenter.Analytics">
-      <Version>4.3.1-XMAC</Version>
+      <Version>4.4.0-XMAC</Version>
     </PackageReference>
     <PackageReference Include="nor0x.AppCenter.Crashes">
-      <Version>4.3.1-XMAC</Version>
+      <Version>4.4.0-XMAC</Version>
     </PackageReference>
   </ItemGroup>
 
