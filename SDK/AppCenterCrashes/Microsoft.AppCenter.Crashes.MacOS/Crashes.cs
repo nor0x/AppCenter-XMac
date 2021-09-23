@@ -90,7 +90,7 @@ namespace Microsoft.AppCenter.Crashes
                     }
                 }
             }
-            MSACCrashes.TrackException(GenerateiOSException(exception, false), propertyDictionary, attachmentArray);
+            MSACCrashes.TrackException(GeneratemacOSException(exception, false), propertyDictionary, attachmentArray);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Microsoft.AppCenter.Crashes
         {
             var systemException = e.ExceptionObject as Exception;
             AppCenterLog.Error(LogTag, "Unhandled Exception:", systemException);
-            var exception = GenerateiOSException(systemException, true);
+            var exception = GeneratemacOSException(systemException, true);
             var exceptionBytes = CrashesUtils.SerializeException(systemException) ?? new byte[0];
             var wrapperExceptionData = NSData.FromArray(exceptionBytes);
             var wrapperException = new MSACWrapperException
@@ -138,7 +138,7 @@ namespace Microsoft.AppCenter.Crashes
             AppCenterLog.Info(LogTag, "Saved wrapper exception.");
         }
 
-        static MSACWrapperExceptionModel GenerateiOSException(Exception exception, bool structuredFrames)
+        static MSACWrapperExceptionModel GeneratemacOSException(Exception exception, bool structuredFrames)
         {
             var msException = new MSACWrapperExceptionModel();
             msException.Type = exception.GetType().FullName;
@@ -154,12 +154,12 @@ namespace Microsoft.AppCenter.Crashes
             {
                 foreach (Exception innerException in aggregateException.InnerExceptions)
                 {
-                    innerExceptions.Add(GenerateiOSException(innerException, structuredFrames));
+                    innerExceptions.Add(GeneratemacOSException(innerException, structuredFrames));
                 }
             }
             else if (exception.InnerException != null)
             {
-                innerExceptions.Add(GenerateiOSException(exception.InnerException, structuredFrames));
+                innerExceptions.Add(GeneratemacOSException(exception.InnerException, structuredFrames));
             }
 
             msException.InnerExceptions = innerExceptions.Count > 0 ? innerExceptions.ToArray() : null;
