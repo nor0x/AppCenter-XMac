@@ -268,7 +268,7 @@ namespace Microsoft.AppCenter.Crashes.MacOS.Bindings
     {
         //@property(nonatomic, strong) MSACException* exception;
         [Export("modelException")]
-        MSACExceptionModel Exception { get; set; }
+        MSACWrapperExceptionModel Exception { get; set; }
 
         //@property(nonatomic, strong) NSData* exceptionData;
         [Export("exceptionData")]
