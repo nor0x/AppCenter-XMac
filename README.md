@@ -11,9 +11,9 @@ AppCenter-XMac are Xamarin.Mac bindings for the AppCenter SDK.
 
 | Module      | Version | Bindings       | Sample | NuGet |
 | :-------------: | :-------------: |:-------------:| :-----:| :-----:|
-| AppCenter      | [4.2.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/4.2.0) | ✔      |  ✔    |[![](https://img.shields.io/nuget/vpre/nor0x.AppCenter.svg)](https://nuget.org/packages/nor0x.AppCenter) [![](https://img.shields.io/nuget/dt/nor0x.AppCenter)](https://www.nuget.org/packages/nor0x.AppCenter)|
-| AppCenter.Analytics| [4.2.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/4.2.0)         | ✔      |  ✔| [![](https://img.shields.io/nuget/vpre/nor0x.AppCenter.Analytics.svg)](https://nuget.org/packages/nor0x.AppCenter.Analytics) [![](https://img.shields.io/nuget/dt/nor0x.AppCenter.Analytics)](https://www.nuget.org/packages/nor0x.AppCenter.Analytics)|
-| AppCenter.Crashes| [4.2.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/4.2.0)| ✔      |  ✔ |[![](https://img.shields.io/nuget/vpre/nor0x.AppCenter.Crashes.svg)](https://nuget.org/packages/nor0x.AppCenter.Crashes) [![](https://img.shields.io/nuget/dt/nor0x.AppCenter.Crashes)](https://www.nuget.org/packages/nor0x.AppCenter.Crashes)|
+| AppCenter      | [4.4.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/4.3.0) | ✔      |  ✔    |[![](https://img.shields.io/nuget/vpre/nor0x.AppCenter.svg)](https://nuget.org/packages/nor0x.AppCenter) [![](https://img.shields.io/nuget/dt/nor0x.AppCenter)](https://www.nuget.org/packages/nor0x.AppCenter)|
+| AppCenter.Analytics| [4.4.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/4.3.0)         | ✔      |  ✔| [![](https://img.shields.io/nuget/vpre/nor0x.AppCenter.Analytics.svg)](https://nuget.org/packages/nor0x.AppCenter.Analytics) [![](https://img.shields.io/nuget/dt/nor0x.AppCenter.Analytics)](https://www.nuget.org/packages/nor0x.AppCenter.Analytics)|
+| AppCenter.Crashes| [4.4.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/4.3.0)| ✔      |  ✔ |[![](https://img.shields.io/nuget/vpre/nor0x.AppCenter.Crashes.svg)](https://nuget.org/packages/nor0x.AppCenter.Crashes) [![](https://img.shields.io/nuget/dt/nor0x.AppCenter.Crashes)](https://www.nuget.org/packages/nor0x.AppCenter.Crashes)|
 
 ## How to use:
 - register a new macOS application on AppCenter.ms
