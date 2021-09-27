@@ -1,3 +1,6 @@
+# UPDATE 27.09.2021
+the AppCenter team approached me to discuss the strategy of official support for Xamarin.Mac. There are resources available now to bring the dotnet-sdk to Xamarin.Mac and the implementation is based on this repository. Feel free to follow the progress here in the PR https://github.com/microsoft/appcenter-sdk-dotnet/pull/1576. Once we have Xamarin.Mac support in the official repository i will archive `AppCenter-XMac` its packages which won't receive new updates from this point on.
+<hr />
 <img src="https://raw.githubusercontent.com/nor0x/AppCenter-XMac/develop/art/Logo.svg?sanitize=true" width="100px" />
 
 # AppCenter-XMac
