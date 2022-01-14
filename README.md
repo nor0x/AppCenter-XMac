@@ -1,3 +1,10 @@
+# UPDATE 14.01.2022
+this repository is now archived and read-only, because https://github.com/microsoft/appcenter-sdk-dotnet/pull/1576 is merged and the AppCenter SDK version 4.5.0 has Xamarin.Mac support built-in. Please update your dependencies and use the official NuGet packages going forward.
+
+*If you want to read about how this repo get started check out my blog post:* https://johnnys.news/2022/01/AppCenter-XMac-is-dead-long-live-Microsoft-AppCenter
+
+
+
 # UPDATE 27.09.2021
 the AppCenter team approached me to discuss the strategy of official support for Xamarin.Mac. There are resources available now to bring the dotnet-sdk to Xamarin.Mac and the implementation is based on this repository. Feel free to follow the progress here in the PR https://github.com/microsoft/appcenter-sdk-dotnet/pull/1576. Once we have Xamarin.Mac support in the official repository i will archive `AppCenter-XMac` its packages which won't receive new updates from this point on.
 <hr />
